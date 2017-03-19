@@ -9,7 +9,7 @@ target '51JRQ' do
   pod "IQKeyboardManager", '~> 3.3.7'
   pod 'BlockAlertsAnd-ActionSheets', '~> 1.0.6'
   pod 'LBXScan', '~> 1.1.1'
-#  pod 'Hyphenate', '~> 3.2.3'
+  pod 'Hyphenate', '~> 3.2.3'
   pod 'YYKit', '~> 1.0.9'
   # Pods for 51JRQ
 

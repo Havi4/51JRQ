@@ -17,6 +17,7 @@ PODS:
   - BlockAlertsAnd-ActionSheets (1.0.6):
     - BlockAlertsAnd-ActionSheets/TableAlertView (= 1.0.6)
   - BlockAlertsAnd-ActionSheets/TableAlertView (1.0.6)
+  - Hyphenate (3.2.3)
   - IQKeyboardManager (3.3.7)
   - LBXScan (1.1.1):
     - ZXingObjC (~> 3.0)
@@ -31,6 +32,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - BlockAlertsAnd-ActionSheets (~> 1.0.6)
+  - Hyphenate (~> 3.2.3)
   - IQKeyboardManager (~> 3.3.7)
   - LBXScan (~> 1.1.1)
   - Masonry (~> 1.0.2)
@@ -39,12 +41,13 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   BlockAlertsAnd-ActionSheets: 15be37bd381afaae85c2d4229db102c2cac742fa
+  Hyphenate: 81c2eb5c8303147f8aef70866811ec12a8b4dcf2
   IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
   LBXScan: dfb4d8ae8e4cff2aa0c9e1771e43954dce1469a9
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   ZXingObjC: bbf7b8f0cf8933fdd33eb4f9f46e22308552869b
 
-PODFILE CHECKSUM: 7a6cdb37916866e3e9054fa087f99f508ab57668
+PODFILE CHECKSUM: 03af44477dbecbfa9dc26f2b85eb868612e8a625
 
 COCOAPODS: 1.2.0.beta.1
