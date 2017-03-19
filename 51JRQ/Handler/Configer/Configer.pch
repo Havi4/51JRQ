@@ -1,0 +1,28 @@
+//
+//  Configer.pch
+//  BaseAppStruct
+//
+//  Created by Havi on 16/6/21.
+//  Copyright © 2016年 Havi. All rights reserved.
+//
+
+#ifndef Configer_pch
+#define Configer_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "Definations.h"
+#import "NSObject+Common.h"
+//#import <Masonry/Masonry.h>
+#import "SDAutoLayout.h"
+#import "UIImage+Tint.h"
+#import "CYLTabBarControllerConfig.h"
+#import "CYLPlusButtonSubclass.h"
+#import "HYBNetworking.h"
+#import "Minya.h"
+#import "Global.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
+#import "UIImage+Common.h"
+#import <YYKit/YYKit.h>
+
+#endif /* Configer_pch */

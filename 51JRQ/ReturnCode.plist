@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>10001</key>
+	<string>http请求URL错误</string>
+	<key>10002</key>
+	<string>服务器不小心休息了，请稍等！</string>
+	<key>10003</key>
+	<string>注册时Cellphone和Email必须有一个不为空</string>
+	<key>10004</key>
+	<string>登录密码为空</string>
+	<key>10005</key>
+	<string>该用户已经存在</string>
+	<key>10006</key>
+	<string>该用户不存在</string>
+	<key>10007</key>
+	<string>http请求URL中包含参数数目不对</string>
+	<key>10008</key>
+	<string>设备UUID不存在</string>
+	<key>10009</key>
+	<string>设备UUID不能为空</string>
+	<key>10010</key>
+	<string>系统参数表没有数据</string>
+	<key>10011</key>
+	<string>用户ID不能为空</string>
+	<key>10012</key>
+	<string>登录密码不正确</string>
+	<key>10013</key>
+	<string>没有相应数据</string>
+	<key>10014</key>
+	<string>文件在服务器未找到</string>
+	<key>10015</key>
+	<string>未处理的标识符</string>
+	<key>10016</key>
+	<string>没有数据被更新</string>
+	<key>10017</key>
+	<string>还没有上传过头像</string>
+	<key>10018</key>
+	<string>文件后缀不支持</string>
+	<key>10019</key>
+	<string>旧密码不正确</string>
+	<key>10020</key>
+	<string>关联的设备不存在</string>
+	<key>10021</key>
+	<string>无效的传感器数据属性代码</string>
+	<key>10022</key>
+	<string>无效的参数值</string>
+	<key>10023</key>
+	<string>无效的AccessToken </string>
+	<key>10024</key>
+	<string>Json传入参数语法错误</string>
+	<key>10025</key>
+	<string>无效的时间参数格式</string>
+	<key>10026</key>
+	<string>数据提交失败</string>
+	<key>10029</key>
+	<string>无效用户ID</string>
+	<key>10030</key>
+	<string>好友搜索条件不可以为空</string>
+	<key>10031</key>
+	<string>产品识别码不存在</string>
+	<key>10032</key>
+	<string>好友关系不存在</string>
+	<key>10033</key>
+	<string>您已经绑定过该设备</string>
+	<key>10034</key>
+	<string>双人床设备不允许单独添加</string>
+	<key>10037</key>
+	<string>该好友已添加</string>
+	<key>10039</key>
+	<string>该文章已收藏</string>
+</dict>
+</plist>
