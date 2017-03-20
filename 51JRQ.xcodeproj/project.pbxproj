@@ -113,6 +113,8 @@
 		575AAF891E7F843800226862 /* groupPublicHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AAF7F1E7F843800226862 /* groupPublicHeader@2x.png */; };
 		575AAF8A1E7F843800226862 /* nav_createGroup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AAF801E7F843800226862 /* nav_createGroup@2x.png */; };
 		575AAF8B1E7F843800226862 /* newFriends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AAF811E7F843800226862 /* newFriends@2x.png */; };
+		575AAFA21E7FDD4500226862 /* SearchResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575AAFA11E7FDD4500226862 /* SearchResultTableViewController.m */; };
+		575AAFA51E800F7F00226862 /* UINavigationController+UIStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 575AAFA41E800F7F00226862 /* UINavigationController+UIStatusBar.m */; };
 		577A84CC1E5E8ED800834E61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A84CB1E5E8ED800834E61 /* main.m */; };
 		577A84D81E5E8ED800834E61 /* _1JRQ.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 577A84D61E5E8ED800834E61 /* _1JRQ.xcdatamodeld */; };
 		577A84DA1E5E8ED800834E61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577A84D91E5E8ED800834E61 /* Assets.xcassets */; };
@@ -504,6 +506,10 @@
 		575AAF7F1E7F843800226862 /* groupPublicHeader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "groupPublicHeader@2x.png"; sourceTree = "<group>"; };
 		575AAF801E7F843800226862 /* nav_createGroup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_createGroup@2x.png"; sourceTree = "<group>"; };
 		575AAF811E7F843800226862 /* newFriends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newFriends@2x.png"; sourceTree = "<group>"; };
+		575AAFA01E7FDD4500226862 /* SearchResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultTableViewController.h; sourceTree = "<group>"; };
+		575AAFA11E7FDD4500226862 /* SearchResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableViewController.m; sourceTree = "<group>"; };
+		575AAFA31E800F7F00226862 /* UINavigationController+UIStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+UIStatusBar.h"; sourceTree = "<group>"; };
+		575AAFA41E800F7F00226862 /* UINavigationController+UIStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+UIStatusBar.m"; sourceTree = "<group>"; };
 		577A84C71E5E8ED800834E61 /* 51JRQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 51JRQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577A84CB1E5E8ED800834E61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		577A84D71E5E8ED800834E61 /* _1JRQ.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _1JRQ.xcdatamodel; sourceTree = "<group>"; };
@@ -1369,6 +1375,8 @@
 				577A851F1E5E95C400834E61 /* NSNumber+Common.m */,
 				577A85201E5E95C400834E61 /* UIImage+Common.h */,
 				577A85211E5E95C400834E61 /* UIImage+Common.m */,
+				575AAFA31E800F7F00226862 /* UINavigationController+UIStatusBar.h */,
+				575AAFA41E800F7F00226862 /* UINavigationController+UIStatusBar.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1691,6 +1699,8 @@
 				577A854D1E5EA84D00834E61 /* MessageshowViewController.m */,
 				575AAF611E7E7AD300226862 /* ConversationListViewController.h */,
 				575AAF621E7E7AD300226862 /* ConversationListViewController.m */,
+				575AAFA01E7FDD4500226862 /* SearchResultTableViewController.h */,
+				575AAFA11E7FDD4500226862 /* SearchResultTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -2858,6 +2868,7 @@
 				57FB9BAD1E7E13CC0086E9E7 /* EaseFacialView.m in Sources */,
 				575AAF631E7E7AD300226862 /* ConversationListViewController.m in Sources */,
 				577A85681E5EA86200834E61 /* CompanyshowView.m in Sources */,
+				575AAFA51E800F7F00226862 /* UINavigationController+UIStatusBar.m in Sources */,
 				57FB9C1C1E7E14060086E9E7 /* EMSDWebImageDecoder.m in Sources */,
 				5735F4351E7A80C700504325 /* UIImage+WebP.m in Sources */,
 				57FB9C2C1E7E14060086E9E7 /* PSTCollectionViewCell.m in Sources */,
@@ -2888,6 +2899,7 @@
 				577A86081E5FCF1B00834E61 /* BaseNetworking.m in Sources */,
 				57FB9BA71E7E13CC0086E9E7 /* EaseBubbleView.m in Sources */,
 				577A85E61E5EAA3400834E61 /* MIStore.m in Sources */,
+				575AAFA21E7FDD4500226862 /* SearchResultTableViewController.m in Sources */,
 				57FB9C1A1E7E14060086E9E7 /* EMSDImageCache.m in Sources */,
 				57FB9C151E7E14050086E9E7 /* MWPhotoBrowser.m in Sources */,
 				5735F47F1E7BB50000504325 /* RxWebViewNavigationViewController.m in Sources */,

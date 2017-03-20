@@ -1203,4 +1203,9 @@ static NSInteger const kWMControllerCountUndefined = -1;
     }
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 @end

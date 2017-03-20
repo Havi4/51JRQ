@@ -11,8 +11,10 @@
   */
 
 #import "GroupListViewController.h"
-
 #import "BaseTableViewCell.h"
+#import "SearchResultTableViewController.h"
+#import "UINavigationController+UIStatusBar.h"
+
 //#import "ChatViewController.h"
 //#import "CreateGroupViewController.h"
 //#import "PublicGroupListViewController.h"
@@ -20,10 +22,12 @@
 //#import "RedPacketChatViewController.h"
 //
 //#import "UIViewController+SearchController.h"
-
-@interface GroupListViewController ()<EMGroupManagerDelegate>
+@interface GroupListViewController ()<EMGroupManagerDelegate,
+UISearchBarDelegate,UISearchControllerDelegate>
 
 @property (strong, nonatomic) NSMutableArray *dataSource;
+@property (nonatomic, strong) UISearchController *searchController;
+@property (nonatomic, assign) UIStatusBarStyle statusBarStyle;
 
 @end
 
@@ -48,12 +52,60 @@
     self.showRefreshHeader = YES;
     
     [self setupSearchController];
-    
+    [self setSearchBar];
+
     // Registered as SDK delegate
     [[EMClient sharedClient].groupManager removeDelegate:self];
     [[EMClient sharedClient].groupManager addDelegate:self delegateQueue:nil];
-    
     [self reloadDataSource];
+}
+
+- (void)setSearchBar
+{
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:[SearchResultTableViewController new]];
+    self.searchController.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.95];
+    self.searchController.delegate = self;
+
+    UISearchBar *bar = self.searchController.searchBar;
+    bar.barStyle = UIBarStyleDefault;
+    bar.translucent = YES;
+    bar.barTintColor = Global_mainBackgroundColor;
+    bar.layer.borderColor = [UIColor clearColor].CGColor;
+    bar.tintColor = Global_tintColor;
+    UIImageView *view = [[[bar.subviews objectAtIndex:0] subviews] firstObject];
+    view.layer.borderColor = Global_mainBackgroundColor.CGColor;
+    view.layer.borderWidth = 1;
+
+//    bar.tintColor = [UIColor whiteColor];
+    bar.placeholder = @"搜索";
+    bar.delegate = self;
+    CGRect rect = bar.frame;
+    rect.size.height = 44;
+    bar.frame = rect;
+    self.tableView.tableHeaderView = bar;
+}
+
+
+#pragma mark - UISearchBarDelegate Method
+
+/**
+ *  开始编辑
+ */
+
+- (UIStatusBarStyle)preferredStatusBarStyle;
+{
+    return self.statusBarStyle == 0 ? UIStatusBarStyleLightContent : UIStatusBarStyleDefault;
+}
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    self.statusBarStyle = UIStatusBarStyleLightContent;
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+- (void)didDismissSearchController:(UISearchController *)searchController
+{
+    self.statusBarStyle = UIStatusBarStyleDefault;
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (void)didReceiveMemoryWarning
@@ -120,7 +172,12 @@
             cell.textLabel.text = group.groupId;
         }
     }
-    
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
     return cell;
 }
 
@@ -172,21 +229,26 @@
         return 0;
     }
     else{
-        return 22;
+        return 0;
     }
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    if (section == 0)
-    {
-        return nil;
-    }
-    
-    UIView *contentView = [[UIView alloc] init];
-    [contentView setBackgroundColor:[UIColor colorWithRed:0.88 green:0.88 blue:0.88 alpha:1.0]];
-    return contentView;
+    return 5;
 }
+
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    if (section == 0)
+//    {
+//        return nil;
+//    }
+//    
+//    UIView *contentView = [[UIView alloc] init];
+//    [contentView setBackgroundColor:[UIColor colorWithRed:0.88 green:0.88 blue:0.88 alpha:1.0]];
+//    return contentView;
+//}
 
 #pragma mark - EMGroupManagerDelegate
 

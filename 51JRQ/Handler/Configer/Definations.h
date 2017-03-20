@@ -83,6 +83,11 @@
 #define ISIPHON4 [UIScreen mainScreen].bounds.size.height==480 ? YES:NO
 #define ISIPHON6 [UIScreen mainScreen].bounds.size.height>568 ? YES:NO
 
+#define Global_tintColor [UIColor colorWithRed:0 green:(190 / 255.0) blue:(12 / 255.0) alpha:1]
+
+#define Global_mainBackgroundColor RGBA(248, 248, 248, 1)
+
+
 #define RGBA(R/*红*/, G/*绿*/, B/*蓝*/, A/*透明*/) \
 [UIColor colorWithRed:R/255.f green:G/255.f blue:B/255.f alpha:A]
 

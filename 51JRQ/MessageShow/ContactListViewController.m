@@ -59,6 +59,7 @@
     
     _contactsSource = [NSMutableArray array];
     _sectionTitles = [NSMutableArray array];
+    self.title = @"通讯录";
     
     // 环信UIdemo中有用到Parse, 加载用户好友个人信息
 //    [[UserProfileManager sharedInstance] loadUserProfileInBackgroundWithBuddy:self.contactsSource saveToLoacal:YES completion:NULL];
@@ -73,6 +74,11 @@
     [super viewWillAppear:animated];
     
     [self reloadApplyView];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -122,9 +128,15 @@
             if (cell == nil) {
                 cell = [[EaseUserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             }
-            cell.avatarView.image = [UIImage imageNamed:@"new_friend"];
+            cell.avatarView.image = [UIImage imageNamed:@"newFriends"];
             cell.titleLabel.text = @"新的好友";
             cell.avatarView.badge = self.unapplyCount;
+            if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+                [cell setSeparatorInset:UIEdgeInsetsZero];
+            }
+            if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+                [cell setLayoutMargins:UIEdgeInsetsZero];
+            }
             return cell;
         }
         
@@ -135,16 +147,22 @@
         }
         
         if (indexPath.row == 1) {
-            cell.avatarView.image = [UIImage imageNamed:@"group_image"];
+            cell.avatarView.image = [UIImage imageNamed:@"EaseUIResource.bundle/group"];
             cell.titleLabel.text = @"群组";
         }
         else if (indexPath.row == 2) {
-            cell.avatarView.image = [UIImage imageNamed:@"chat_room"];
+            cell.avatarView.image = [UIImage imageNamed:@"EaseUIResource.bundle/group"];
             cell.titleLabel.text = @"聊天室";
         }
         else if (indexPath.row == 3) {
             cell.avatarView.image = [UIImage imageNamed:@"EaseUIResource.bundle/group"];
             cell.titleLabel.text = NSLocalizedString(@"title.robotlist",@"robot list");
+        }
+        if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+            [cell setSeparatorInset:UIEdgeInsetsZero];
+        }
+        if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+            [cell setLayoutMargins:UIEdgeInsetsZero];
         }
         return cell;
     }
@@ -167,9 +185,15 @@
         cell.indexPath = indexPath;
         cell.delegate = self;
 //        cell.model = model;
-
+        if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+            [cell setSeparatorInset:UIEdgeInsetsZero];
+        }
+        if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+            [cell setLayoutMargins:UIEdgeInsetsZero];
+        }
         return cell;
-    }}
+    }
+}
 
 #pragma mark - Table view delegate
 
@@ -222,7 +246,7 @@
         }
         else if (row == 1)
         {
-            GroupListViewController *groupController = [[GroupListViewController alloc] initWithStyle:UITableViewStylePlain];
+            GroupListViewController *groupController = [[GroupListViewController alloc] initWithStyle:UITableViewStyleGrouped];
             [self.navigationController pushViewController:groupController animated:YES];
         }
         else if (row == 2)
