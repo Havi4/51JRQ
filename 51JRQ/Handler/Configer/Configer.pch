@@ -24,5 +24,7 @@
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import "UIImage+Common.h"
 #import <YYKit/YYKit.h>
+#import <Hyphenate/Hyphenate.h>
+#import "EaseUI.h"
 
 #endif /* Configer_pch */

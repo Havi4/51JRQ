@@ -97,6 +97,22 @@
 		5735F6521E7D7FA600504325 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5735F6511E7D7FA600504325 /* libiconv.tbd */; };
 		5735F6541E7D801200504325 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5735F6531E7D801200504325 /* Foundation.framework */; };
 		5735F6561E7D815100504325 /* Hyphenate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5735F6551E7D815100504325 /* Hyphenate.framework */; };
+		575AAF631E7E7AD300226862 /* ConversationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF621E7E7AD300226862 /* ConversationListViewController.m */; };
+		575AAF6A1E7F6DD300226862 /* ContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF691E7F6DD300226862 /* ContactListViewController.m */; };
+		575AAF6D1E7F7CBE00226862 /* GroupListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF6C1E7F7CBE00226862 /* GroupListViewController.m */; };
+		575AAF701E7F7E3C00226862 /* UIImageView+HeadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF6F1E7F7E3C00226862 /* UIImageView+HeadImage.m */; };
+		575AAF731E7F803B00226862 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 575AAF721E7F803B00226862 /* BaseTableViewCell.m */; };
+		575AAF761E7F833300226862 /* EaseUIResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 575AAF751E7F833300226862 /* EaseUIResource.bundle */; };
+		575AAF821E7F843800226862 /* group_creategroup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AAF781E7F843800226862 /* group_creategroup@2x.png */; };
+		575AAF831E7F843800226862 /* group_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AAF791E7F843800226862 /* group_header@2x.png */; };
+		575AAF841E7F843800226862 /* group_invitee_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AAF7A1E7F843800226862 /* group_invitee_delete@2x.png */; };
+		575AAF851E7F843800226862 /* group_joinpublicgroup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AAF7B1E7F843800226862 /* group_joinpublicgroup@2x.png */; };
+		575AAF861E7F843800226862 /* group_participant_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AAF7C1E7F843800226862 /* group_participant_add@2x.png */; };
+		575AAF871E7F843800226862 /* group_participant_addHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AAF7D1E7F843800226862 /* group_participant_addHL@2x.png */; };
+		575AAF881E7F843800226862 /* groupPrivateHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AAF7E1E7F843800226862 /* groupPrivateHeader@2x.png */; };
+		575AAF891E7F843800226862 /* groupPublicHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AAF7F1E7F843800226862 /* groupPublicHeader@2x.png */; };
+		575AAF8A1E7F843800226862 /* nav_createGroup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AAF801E7F843800226862 /* nav_createGroup@2x.png */; };
+		575AAF8B1E7F843800226862 /* newFriends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AAF811E7F843800226862 /* newFriends@2x.png */; };
 		577A84CC1E5E8ED800834E61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A84CB1E5E8ED800834E61 /* main.m */; };
 		577A84D81E5E8ED800834E61 /* _1JRQ.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 577A84D61E5E8ED800834E61 /* _1JRQ.xcdatamodeld */; };
 		577A84DA1E5E8ED800834E61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577A84D91E5E8ED800834E61 /* Assets.xcassets */; };
@@ -467,6 +483,27 @@
 		5735F6511E7D7FA600504325 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		5735F6531E7D801200504325 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5735F6551E7D815100504325 /* Hyphenate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hyphenate.framework; path = Pods/Hyphenate/ios_IM_Hyphenate_sdk_3.2.3/HyphenateFullSDK/Hyphenate.framework; sourceTree = "<group>"; };
+		575AAF611E7E7AD300226862 /* ConversationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationListViewController.h; sourceTree = "<group>"; };
+		575AAF621E7E7AD300226862 /* ConversationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationListViewController.m; sourceTree = "<group>"; };
+		575AAF681E7F6DD300226862 /* ContactListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListViewController.h; sourceTree = "<group>"; };
+		575AAF691E7F6DD300226862 /* ContactListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactListViewController.m; sourceTree = "<group>"; };
+		575AAF6B1E7F7CBE00226862 /* GroupListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupListViewController.h; sourceTree = "<group>"; };
+		575AAF6C1E7F7CBE00226862 /* GroupListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupListViewController.m; sourceTree = "<group>"; };
+		575AAF6E1E7F7E3C00226862 /* UIImageView+HeadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HeadImage.h"; sourceTree = "<group>"; };
+		575AAF6F1E7F7E3C00226862 /* UIImageView+HeadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HeadImage.m"; sourceTree = "<group>"; };
+		575AAF711E7F803B00226862 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		575AAF721E7F803B00226862 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		575AAF751E7F833300226862 /* EaseUIResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EaseUIResource.bundle; sourceTree = "<group>"; };
+		575AAF781E7F843800226862 /* group_creategroup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "group_creategroup@2x.png"; sourceTree = "<group>"; };
+		575AAF791E7F843800226862 /* group_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "group_header@2x.png"; sourceTree = "<group>"; };
+		575AAF7A1E7F843800226862 /* group_invitee_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "group_invitee_delete@2x.png"; sourceTree = "<group>"; };
+		575AAF7B1E7F843800226862 /* group_joinpublicgroup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "group_joinpublicgroup@2x.png"; sourceTree = "<group>"; };
+		575AAF7C1E7F843800226862 /* group_participant_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "group_participant_add@2x.png"; sourceTree = "<group>"; };
+		575AAF7D1E7F843800226862 /* group_participant_addHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "group_participant_addHL@2x.png"; sourceTree = "<group>"; };
+		575AAF7E1E7F843800226862 /* groupPrivateHeader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "groupPrivateHeader@2x.png"; sourceTree = "<group>"; };
+		575AAF7F1E7F843800226862 /* groupPublicHeader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "groupPublicHeader@2x.png"; sourceTree = "<group>"; };
+		575AAF801E7F843800226862 /* nav_createGroup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_createGroup@2x.png"; sourceTree = "<group>"; };
+		575AAF811E7F843800226862 /* newFriends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newFriends@2x.png"; sourceTree = "<group>"; };
 		577A84C71E5E8ED800834E61 /* 51JRQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 51JRQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577A84CB1E5E8ED800834E61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		577A84D71E5E8ED800834E61 /* _1JRQ.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _1JRQ.xcdatamodel; sourceTree = "<group>"; };
@@ -1199,6 +1236,33 @@
 			path = ThreeDES;
 			sourceTree = "<group>";
 		};
+		575AAF741E7F833300226862 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				575AAF771E7F843800226862 /* other */,
+				575AAF751E7F833300226862 /* EaseUIResource.bundle */,
+			);
+			name = resources;
+			path = 51JRQ/Vender/EMUIKit/resources;
+			sourceTree = SOURCE_ROOT;
+		};
+		575AAF771E7F843800226862 /* other */ = {
+			isa = PBXGroup;
+			children = (
+				575AAF781E7F843800226862 /* group_creategroup@2x.png */,
+				575AAF791E7F843800226862 /* group_header@2x.png */,
+				575AAF7A1E7F843800226862 /* group_invitee_delete@2x.png */,
+				575AAF7B1E7F843800226862 /* group_joinpublicgroup@2x.png */,
+				575AAF7C1E7F843800226862 /* group_participant_add@2x.png */,
+				575AAF7D1E7F843800226862 /* group_participant_addHL@2x.png */,
+				575AAF7E1E7F843800226862 /* groupPrivateHeader@2x.png */,
+				575AAF7F1E7F843800226862 /* groupPublicHeader@2x.png */,
+				575AAF801E7F843800226862 /* nav_createGroup@2x.png */,
+				575AAF811E7F843800226862 /* newFriends@2x.png */,
+			);
+			path = other;
+			sourceTree = "<group>";
+		};
 		577A84BE1E5E8ED800834E61 = {
 			isa = PBXGroup;
 			children = (
@@ -1295,6 +1359,8 @@
 		577A85061E5E942300834E61 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				575AAF6E1E7F7E3C00226862 /* UIImageView+HeadImage.h */,
+				575AAF6F1E7F7E3C00226862 /* UIImageView+HeadImage.m */,
 				577A85071E5E942300834E61 /* NSObject+Common.h */,
 				577A85081E5E942300834E61 /* NSObject+Common.m */,
 				577A85091E5E942300834E61 /* UIImage+Tint.h */,
@@ -1608,6 +1674,8 @@
 			children = (
 				577A854A1E5EA84D00834E61 /* MessageshowView.h */,
 				577A854B1E5EA84D00834E61 /* MessageshowView.m */,
+				575AAF711E7F803B00226862 /* BaseTableViewCell.h */,
+				575AAF721E7F803B00226862 /* BaseTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1615,8 +1683,14 @@
 		577A85851E5EA92C00834E61 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				575AAF6B1E7F7CBE00226862 /* GroupListViewController.h */,
+				575AAF6C1E7F7CBE00226862 /* GroupListViewController.m */,
+				575AAF681E7F6DD300226862 /* ContactListViewController.h */,
+				575AAF691E7F6DD300226862 /* ContactListViewController.m */,
 				577A854C1E5EA84D00834E61 /* MessageshowViewController.h */,
 				577A854D1E5EA84D00834E61 /* MessageshowViewController.m */,
+				575AAF611E7E7AD300226862 /* ConversationListViewController.h */,
+				575AAF621E7E7AD300226862 /* ConversationListViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1882,8 +1956,9 @@
 		57FB9AE11E7E13CC0086E9E7 /* EMUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				57FB9AE21E7E13CC0086E9E7 /* 3rdparty */,
 				57FB9B081E7E13CC0086E9E7 /* EaseUI.h */,
+				575AAF741E7F833300226862 /* resources */,
+				57FB9AE21E7E13CC0086E9E7 /* 3rdparty */,
 				57FB9B091E7E13CC0086E9E7 /* Helper */,
 				57FB9B0C1E7E13CC0086E9E7 /* Model */,
 				57FB9B181E7E13CC0086E9E7 /* Util */,
@@ -2485,17 +2560,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				5735F47B1E7BB50000504325 /* backItemImage_hl@2x.png in Resources */,
+				575AAF8B1E7F843800226862 /* newFriends@2x.png in Resources */,
 				5701A7F81E5FDE6200C6CE57 /* com_51jrq.cer in Resources */,
 				5701A7FA1E60036400C6CE57 /* ReturnCode.plist in Resources */,
+				575AAF851E7F843800226862 /* group_joinpublicgroup@2x.png in Resources */,
+				575AAF761E7F833300226862 /* EaseUIResource.bundle in Resources */,
+				575AAF821E7F843800226862 /* group_creategroup@2x.png in Resources */,
+				575AAF831E7F843800226862 /* group_header@2x.png in Resources */,
 				57FB9C371E7E14060086E9E7 /* MWPhotoBrowser.bundle in Resources */,
 				577A84DD1E5E8ED800834E61 /* LaunchScreen.storyboard in Resources */,
 				57ACB2F11E6E87E800D04A4D /* MJRefresh.bundle in Resources */,
+				575AAF891E7F843800226862 /* groupPublicHeader@2x.png in Resources */,
 				5735F47A1E7BB50000504325 /* backItemImage@2x.png in Resources */,
+				575AAF8A1E7F843800226862 /* nav_createGroup@2x.png in Resources */,
+				575AAF841E7F843800226862 /* group_invitee_delete@2x.png in Resources */,
 				5735F3A31E77E32D00504325 /* PYSearch.bundle in Resources */,
 				5735F3AA1E781E9000504325 /* homeData.plist in Resources */,
+				575AAF861E7F843800226862 /* group_participant_add@2x.png in Resources */,
+				575AAF881E7F843800226862 /* groupPrivateHeader@2x.png in Resources */,
 				577A84DA1E5E8ED800834E61 /* Assets.xcassets in Resources */,
 				5735F3EF1E7A6E7800504325 /* TagsFilterTableViewCell.xib in Resources */,
 				5735F3D61E797C9200504325 /* CodeScan.bundle in Resources */,
+				575AAF871E7F843800226862 /* group_participant_addHL@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2689,6 +2775,7 @@
 				57FB9C281E7E14060086E9E7 /* UIImageView+EMWebCache.m in Sources */,
 				57FB9C201E7E14060086E9E7 /* EMSDWebImagePrefetcher.m in Sources */,
 				57FB9B981E7E13CC0086E9E7 /* EaseRefreshTableViewController.m in Sources */,
+				575AAF6D1E7F7CBE00226862 /* GroupListViewController.m in Sources */,
 				57FB9C101E7E14050086E9E7 /* MBProgressHUD.m in Sources */,
 				57FB9C221E7E14060086E9E7 /* NSData+EMImageContentType.m in Sources */,
 				57FB9B791E7E13CC0086E9E7 /* EMAudioRecorderUtil.m in Sources */,
@@ -2700,6 +2787,7 @@
 				57FB9B8C1E7E13CC0086E9E7 /* UIViewController+HUD.m in Sources */,
 				5735F48B1E7D17A500504325 /* AppDelegate.m in Sources */,
 				577A85221E5E95C400834E61 /* NSNumber+Common.m in Sources */,
+				575AAF731E7F803B00226862 /* BaseTableViewCell.m in Sources */,
 				57FB9B8F1E7E13CC0086E9E7 /* EaseMessageReadManager.m in Sources */,
 				5735F4561E7AD03100504325 /* CompanyJobTableViewCell.m in Sources */,
 				57FB9B861E7E13CC0086E9E7 /* EaseMessageModel.m in Sources */,
@@ -2761,12 +2849,14 @@
 				57FB9B9D1E7E13CC0086E9E7 /* EaseCustomMessageCell.m in Sources */,
 				5735F44D1E7AC18A00504325 /* WMMenuView.m in Sources */,
 				577A855C1E5EA85700834E61 /* ConselorshowView.m in Sources */,
+				575AAF701E7F7E3C00226862 /* UIImageView+HeadImage.m in Sources */,
 				57FB9C231E7E14060086E9E7 /* UIButton+EMWebCache.m in Sources */,
 				577A85231E5E95C400834E61 /* UIImage+Common.m in Sources */,
 				57FB9C2E1E7E14060086E9E7 /* PSTCollectionViewData.m in Sources */,
 				577A85921E5EA96000834E61 /* MineshowViewController.m in Sources */,
 				57ACB2F61E6E87E800D04A4D /* UIView+MJExtension.m in Sources */,
 				57FB9BAD1E7E13CC0086E9E7 /* EaseFacialView.m in Sources */,
+				575AAF631E7E7AD300226862 /* ConversationListViewController.m in Sources */,
 				577A85681E5EA86200834E61 /* CompanyshowView.m in Sources */,
 				57FB9C1C1E7E14060086E9E7 /* EMSDWebImageDecoder.m in Sources */,
 				5735F4351E7A80C700504325 /* UIImage+WebP.m in Sources */,
@@ -2774,6 +2864,7 @@
 				5735F3D11E79797200504325 /* LBXAlertAction.m in Sources */,
 				57FB9B881E7E13CC0086E9E7 /* NSDate+Category.m in Sources */,
 				5735F4041E7A7C3700504325 /* SDCollectionViewCell.m in Sources */,
+				575AAF6A1E7F6DD300226862 /* ContactListViewController.m in Sources */,
 				57FB9B8D1E7E13CC0086E9E7 /* EaseChineseToPinyin.m in Sources */,
 				57FB9B7D1E7E13CC0086E9E7 /* EMCDDeviceManager+Remind.m in Sources */,
 				57FB9B891E7E13CC0086E9E7 /* NSDateFormatter+Category.m in Sources */,
@@ -3043,6 +3134,7 @@
 			baseConfigurationReference = 1C6197432DB36FBDB5960134 /* Pods-51JRQ.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				DEVELOPMENT_TEAM = CF99UB3L46;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3070,6 +3162,7 @@
 			baseConfigurationReference = 7297EB8E1B1A94E4BDD269CA /* Pods-51JRQ.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				DEVELOPMENT_TEAM = CF99UB3L46;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

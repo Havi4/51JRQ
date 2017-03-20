@@ -10,7 +10,6 @@
 #import "HiInitData.h"
 #import "HiThirdPartService.h"
 #import "HiThirdServiceInit.h"
-#import <Hyphenate/Hyphenate.h>
 
 @interface AppDelegate ()
 

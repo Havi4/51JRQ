@@ -57,8 +57,6 @@ CGFloat const EaseUserCellPadding = 10;
 /*!
  @method
  @brief 加载视图
- @discussion
- @return
  */
 - (void)_setupSubview
 {
@@ -84,8 +82,6 @@ CGFloat const EaseUserCellPadding = 10;
 /*!
  @method
  @brief 设置avatarView的约束
- @discussion
- @return
  */
 - (void)_setupAvatarViewConstraints
 {

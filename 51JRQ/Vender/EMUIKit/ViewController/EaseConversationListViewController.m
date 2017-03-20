@@ -54,47 +54,74 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.dataArray count];
+    if (section == 0) {
+        return 2;
+    }else{
+        return [self.dataArray count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *CellIdentifier = [EaseConversationCell cellIdentifierWithModel:nil];
-    EaseConversationCell *cell = (EaseConversationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    // Configure the cell...
-    if (cell == nil) {
-        cell = [[EaseConversationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    if ([self.dataArray count] <= indexPath.row) {
+    if (indexPath.section == 0) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+        if (!cell) {
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        }
+        if (indexPath.row == 0) {
+            cell.imageView.image = [UIImage imageNamed:@"noti_image"];
+            cell.textLabel.text = @"通知";
+        }else{
+            cell.imageView.image = [UIImage imageNamed:@"see_me_image"];
+            cell.textLabel.text = @"谁看过我";
+        }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+            [cell setSeparatorInset:UIEdgeInsetsZero];
+        }
+        if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+            [cell setLayoutMargins:UIEdgeInsetsZero];
+        }
+        return cell;
+    }else{
+
+        NSString *CellIdentifier = [EaseConversationCell cellIdentifierWithModel:nil];
+        EaseConversationCell *cell = (EaseConversationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+            // Configure the cell...
+        if (cell == nil) {
+            cell = [[EaseConversationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+
+        if ([self.dataArray count] <= indexPath.row) {
+            return cell;
+        }
+
+        id<IConversationModel> model = [self.dataArray objectAtIndex:indexPath.row];
+        cell.model = model;
+
+        if (_dataSource && [_dataSource respondsToSelector:@selector(conversationListViewController:latestMessageTitleForConversationModel:)]) {
+            NSMutableAttributedString *attributedText = [[_dataSource conversationListViewController:self latestMessageTitleForConversationModel:model] mutableCopy];
+            [attributedText addAttributes:@{NSFontAttributeName : cell.detailLabel.font} range:NSMakeRange(0, attributedText.length)];
+            cell.detailLabel.attributedText =  attributedText;
+        } else {
+            cell.detailLabel.attributedText =  [[EaseEmotionEscape sharedInstance] attStringFromTextForChatting:[self _latestMessageTitleForConversationModel:model]textFont:cell.detailLabel.font];
+        }
+
+        if (_dataSource && [_dataSource respondsToSelector:@selector(conversationListViewController:latestMessageTimeForConversationModel:)]) {
+            cell.timeLabel.text = [_dataSource conversationListViewController:self latestMessageTimeForConversationModel:model];
+        } else {
+            cell.timeLabel.text = [self _latestMessageTimeForConversationModel:model];
+        }
+        
         return cell;
     }
-    
-    id<IConversationModel> model = [self.dataArray objectAtIndex:indexPath.row];
-    cell.model = model;
-    
-    if (_dataSource && [_dataSource respondsToSelector:@selector(conversationListViewController:latestMessageTitleForConversationModel:)]) {
-        NSMutableAttributedString *attributedText = [[_dataSource conversationListViewController:self latestMessageTitleForConversationModel:model] mutableCopy];
-        [attributedText addAttributes:@{NSFontAttributeName : cell.detailLabel.font} range:NSMakeRange(0, attributedText.length)];
-        cell.detailLabel.attributedText =  attributedText;
-    } else {
-        cell.detailLabel.attributedText =  [[EaseEmotionEscape sharedInstance] attStringFromTextForChatting:[self _latestMessageTitleForConversationModel:model]textFont:cell.detailLabel.font];
-    }
-    
-    if (_dataSource && [_dataSource respondsToSelector:@selector(conversationListViewController:latestMessageTimeForConversationModel:)]) {
-        cell.timeLabel.text = [_dataSource conversationListViewController:self latestMessageTimeForConversationModel:model];
-    } else {
-        cell.timeLabel.text = [self _latestMessageTimeForConversationModel:model];
-    }
-    
-    return cell;
 }
 
 #pragma mark - Table view delegate
@@ -107,16 +134,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if (_delegate && [_delegate respondsToSelector:@selector(conversationListViewController:didSelectConversationModel:)]) {
-        EaseConversationModel *model = [self.dataArray objectAtIndex:indexPath.row];
-        [_delegate conversationListViewController:self didSelectConversationModel:model];
-    } else {
-        EaseConversationModel *model = [self.dataArray objectAtIndex:indexPath.row];
-        EaseMessageViewController *viewController = [[EaseMessageViewController alloc] initWithConversationChatter:model.conversation.conversationId conversationType:model.conversation.type];
-        viewController.title = model.title;
-        [self.navigationController pushViewController:viewController animated:YES];
+    if (indexPath.section !=0) {
+        if (_delegate && [_delegate respondsToSelector:@selector(conversationListViewController:didSelectConversationModel:)]) {
+            EaseConversationModel *model = [self.dataArray objectAtIndex:indexPath.row];
+            [_delegate conversationListViewController:self didSelectConversationModel:model];
+        } else {
+            EaseConversationModel *model = [self.dataArray objectAtIndex:indexPath.row];
+            EaseMessageViewController *viewController = [[EaseMessageViewController alloc] initWithConversationChatter:model.conversation.conversationId conversationType:model.conversation.type];
+            viewController.title = model.title;
+            [self.navigationController pushViewController:viewController animated:YES];
+        }
     }
+
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{

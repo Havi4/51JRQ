@@ -30,10 +30,10 @@
 + (BOOL)baseURLStrIsTest;
 + (void)changeBaseURLStrToTest:(BOOL)isTest;
 
-+ (id) loadResponseWithPath:(NSString *)requestPath;
-+ (BOOL)saveResponseData:(NSDictionary *)data toPath:(NSString *)requestPath;
+//+ (id) loadResponseWithPath:(NSString *)requestPath;
+//+ (BOOL)saveResponseData:(NSDictionary *)data toPath:(NSString *)requestPath;
 #pragma mark NetError
--(id)handleResponse:(id)responseJSON;
+//-(id)handleResponse:(id)responseJSON;
 -(id)handleResponse:(id)responseJSON autoShowError:(BOOL)autoShowError;
 
 #pragma mark 顶层controller

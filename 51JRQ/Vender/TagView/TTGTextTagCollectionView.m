@@ -385,7 +385,7 @@
 }
 
 - (UIView *)tagCollectionView:(TTGTagCollectionView *)tagCollectionView tagViewForIndex:(NSUInteger)index {
-    TTGTextTagLabel *label = _tagLabels[index];
+//    TTGTextTagLabel *label = _tagLabels[index];
     return _tagLabels[index];
 }
 

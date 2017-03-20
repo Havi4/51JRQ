@@ -55,9 +55,7 @@ static CGFloat EaseUserCellMinHeight = 50;
 /*!
  @method
  @brief 选中的好友(用户)cell长按回调
- @discussion
  @param indexPath 选中的cell所在位置
- @result
  */
 - (void)cellLongPressAtIndexPath:(NSIndexPath *)indexPath;
 

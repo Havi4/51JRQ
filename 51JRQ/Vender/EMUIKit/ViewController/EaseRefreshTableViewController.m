@@ -36,7 +36,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
+    backItem.title = @"返回";
+    self.navigationItem.backBarButtonItem = backItem;
+    self.view.backgroundColor = [UIColor lightGrayColor];
     // Uncomment the following line to preserve selection between presentations.
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
         [self setEdgesForExtendedLayout:UIRectEdgeNone];

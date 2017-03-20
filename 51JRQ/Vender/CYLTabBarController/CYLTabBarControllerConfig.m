@@ -8,6 +8,7 @@
 #import "CYLTabBarControllerConfig.h"
 #import "CYNavigationViewController.h"
 #import "WMPageController.h"
+#import "ConversationListViewController.h"
 @interface CYLBaseNavigationController : UINavigationController
 @end
 
@@ -55,10 +56,12 @@
     UIViewController *companyNavigationController = [[CYNavigationViewController alloc]
                                                   initWithRootViewController:pageController];
 
-    MIScene *conselorScene = [MIScene sceneWithView:@"MessageshowView" controller:@"MessageshowViewController" store:@"MessageshowStore"];
-    UIViewController *conselorViewController = [[MIMediator sharedMediator] viewControllerWithScene:conselorScene context:nil];
+//    MIScene *conselorScene = [MIScene sceneWithView:@"MessageshowView" controller:@"MessageshowViewController" store:@"MessageshowStore"];
+//    UIViewController *conselorViewController = [[MIMediator sharedMediator] viewControllerWithScene:conselorScene context:nil];
+    ConversationListViewController *chatListVC = [[ConversationListViewController alloc] initWithNibName:nil bundle:nil];
+//    [ChatDemoHelper shareHelper].conversationListVC = chatListVC;
     UIViewController *conselorNavigationController = [[CYNavigationViewController alloc]
-                                                     initWithRootViewController:conselorViewController];
+                                                     initWithRootViewController:chatListVC];
 
     MIScene *messageScene = [MIScene sceneWithView:@"MineshowView" controller:@"MineshowViewController" store:@"MineshowStore"];
     UIViewController *messageViewController = [[MIMediator sharedMediator] viewControllerWithScene:messageScene context:nil];

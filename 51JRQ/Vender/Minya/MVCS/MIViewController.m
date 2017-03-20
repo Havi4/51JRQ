@@ -60,7 +60,10 @@
     [self setupPipeline:self.store.pipeline];
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.view setupPipeline:self.store.pipeline];
-    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
+    backItem.title = @"返回";
+    self.navigationItem.backBarButtonItem = backItem;
+
     // Add observers of the pipeline data.
     [self addObservers];
 }

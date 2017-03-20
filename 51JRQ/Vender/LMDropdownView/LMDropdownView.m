@@ -242,7 +242,7 @@
         [self.backgroundButton addTarget:self action:@selector(backgroundButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     }
     UIColor *maskColor = [[UIColor blackColor] colorWithAlphaComponent:self.blackMaskAlpha];
-    self.backgroundButton.backgroundColor = [UIColor clearColor];
+    self.backgroundButton.backgroundColor = maskColor;
     self.backgroundButton.frame = self.mainView.bounds;
     [self.mainView addSubview:self.backgroundButton];
     
