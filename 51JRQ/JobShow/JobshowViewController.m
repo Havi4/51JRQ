@@ -68,6 +68,7 @@
 
 - (void)initNaviBar
 {
+    self.title = @"首页";
     UIView *titleView = [[UIView alloc] init];
     titleView.py_x = 10 * 0.5;
     titleView.py_y = 7;
@@ -226,9 +227,6 @@
     [MIObserve(self.pipeline,linkUrl) changed:^(id  _Nonnull newValue) {
         strongSelf(self)
         RxWebViewController* webViewController = [[RxWebViewController alloc] initWithUrl:[NSURL URLWithString:self.pipeline.linkUrl]];
-        UIBarButtonItem *back = [[UIBarButtonItem alloc]init];
-        back.title = @"返回";
-        self.navigationItem.backBarButtonItem = back;
         self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
         [self.navigationController pushViewController:webViewController animated:YES];
     }];

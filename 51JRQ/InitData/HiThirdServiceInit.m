@@ -8,7 +8,7 @@
 
 #import "HiThirdServiceInit.h"
 #import <Hyphenate/Hyphenate.h>
-
+#import "ChatViewController.h"
 
 @interface HiThirdServiceInit ()
 
@@ -72,6 +72,8 @@
                                         }
                                     }];
     */
+
+    [[IQKeyboardManager sharedManager]disableToolbarInViewControllerClass:[EaseRefreshTableViewController class]];
 
 }
 

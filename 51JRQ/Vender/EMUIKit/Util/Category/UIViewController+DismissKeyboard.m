@@ -29,6 +29,7 @@
                      queue:mainQuene
                 usingBlock:^(NSNotification *note){
                     [weakSelf.view addGestureRecognizer:singleTapGR];
+                    DeBugLog(@"显示键盘");
                 }];
     [nc addObserverForName:UIKeyboardWillHideNotification
                     object:nil

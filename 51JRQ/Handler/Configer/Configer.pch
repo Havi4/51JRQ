@@ -14,6 +14,7 @@
 #import "Definations.h"
 #import "NSObject+Common.h"
 //#import <Masonry/Masonry.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
 #import "SDAutoLayout.h"
 #import "UIImage+Tint.h"
 #import "CYLTabBarControllerConfig.h"
