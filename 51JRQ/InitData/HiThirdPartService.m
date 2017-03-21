@@ -15,7 +15,9 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     [[UINavigationBar appearance] setBarTintColor:kNaviBarBackColor];
     [[UINavigationBar appearance] setTintColor:kBarTintColor];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}]; 
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [[IQKeyboardManager sharedManager]disableToolbarInViewControllerClass:[EaseRefreshTableViewController class]];
+
 }
 
 @end

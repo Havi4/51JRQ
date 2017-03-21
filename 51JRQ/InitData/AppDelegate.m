@@ -9,8 +9,8 @@
 #import "AppDelegate.h"
 #import "HiInitData.h"
 #import "HiThirdPartService.h"
-#import "HiThirdServiceInit.h"
-
+#import "AppDelegate+EaseMob.h"
+#import "ChatMessageHelper.h"
 @interface AppDelegate ()
 
 @end
@@ -21,11 +21,32 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [[HiThirdServiceInit alloc]initWithApplication:application launchingWithOptions:launchOptions];
+    [self initWithApplication:application launchingWithOptions:launchOptions];
     #pragma mark 设置tabbar
     _tabBarControllerConfig = [[CYLTabBarControllerConfig alloc] init];
     self.window.rootViewController = _tabBarControllerConfig.tabBarController;
     self.window.backgroundColor = [UIColor whiteColor];
+    #pragma mark 测试数据
+    [[EMClient sharedClient]loginWithUsername:@"liwe" password:@"123456" completion:^(NSString *aUsername, EMError *aError) {
+        if (!aError) {
+            DeBugLog(@"登录成功");
+                //设置是否自动登录
+            [[EMClient sharedClient].options setIsAutoLogin:YES];
+                //获取数据库中数据
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                [[EMClient sharedClient] migrateDatabaseToLatestSDK];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[ChatMessageHelper shareHelper] asyncGroupFromServer];
+//                    [[ChatMessageHelper shareHelper] asyncConversationFromDB];
+                    [[ChatMessageHelper shareHelper] asyncPushOptions];
+                        //发送自动登陆状态通知
+                    [[NSNotificationCenter defaultCenter] postNotificationName:KNOTIFICATION_LOGINCHANGE object:@([[EMClient sharedClient] isLoggedIn])];
+                });
+            });
+        }else{
+            [EMAlertView showAlertWithTitle:@"登录失败" message:@"充实" completionBlock:nil cancelButtonTitle:nil otherButtonTitles:nil];
+        }
+    }];
     [self.window makeKeyAndVisible];
     return YES;
 }

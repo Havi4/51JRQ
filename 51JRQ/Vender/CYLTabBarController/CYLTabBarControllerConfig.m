@@ -9,6 +9,8 @@
 #import "CYNavigationViewController.h"
 #import "WMPageController.h"
 #import "ConversationListViewController.h"
+#import "ChatMessageHelper.h"
+
 @interface CYLBaseNavigationController : UINavigationController
 @end
 
@@ -75,6 +77,7 @@
                                  conselorNavigationController,
                                  messageNavigationController
                                  ];
+    [ChatMessageHelper shareHelper].conversationListVC = chatListVC;
     return viewControllers;
 }
 

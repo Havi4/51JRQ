@@ -11,15 +11,15 @@
  */
 
 #import "ContactListViewController.h"
+#import "UserProfileManager.h"
+#import "ApplyViewController.h"
 
 //#import "ChatViewController.h"
 //#import "RobotListViewController.h"
 //#import "ChatroomListViewController.h"
 //#import "AddFriendViewController.h"
-//#import "ApplyViewController.h"
 //#import "UserProfileManager.h"
 //#import "RealtimeSearchUtil.h"
-//#import "UserProfileManager.h"
 //#import "RedPacketChatViewController.h"
 
 //#import "BaseTableViewCell.h"
@@ -176,15 +176,15 @@
         }
         
         NSArray *userSection = [self.dataArray objectAtIndex:(indexPath.section - 1)];
-//        EaseUserModel *model = [userSection objectAtIndex:indexPath.row];
-//        UserProfileEntity *profileEntity = [[UserProfileManager sharedInstance] getUserProfileByUsername:model.buddy];
-//        if (profileEntity) {
-//            model.avatarURLPath = profileEntity.imageUrl;
-//            model.nickname = profileEntity.nickname == nil ? profileEntity.username : profileEntity.nickname;
-//        }
+        EaseUserModel *model = [userSection objectAtIndex:indexPath.row];
+        UserProfileEntity *profileEntity = [[UserProfileManager sharedInstance] getUserProfileByUsername:model.buddy];
+        if (profileEntity) {
+            model.avatarURLPath = profileEntity.imageUrl;
+            model.nickname = profileEntity.nickname == nil ? profileEntity.username : profileEntity.nickname;
+        }
         cell.indexPath = indexPath;
         cell.delegate = self;
-//        cell.model = model;
+        cell.model = model;
         if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
             [cell setSeparatorInset:UIEdgeInsetsZero];
         }
@@ -199,6 +199,10 @@
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
+        //更改索引的背景颜色
+    tableView.sectionIndexBackgroundColor = [UIColor clearColor];
+        //更改索引的背景颜色:
+    tableView.sectionIndexColor = kNaviBarBackColor;
     return self.sectionTitles;
 }
 
@@ -224,6 +228,7 @@
     [contentView setBackgroundColor:[UIColor colorWithRed:0.88 green:0.88 blue:0.88 alpha:1.0]];
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 22)];
     label.backgroundColor = [UIColor clearColor];
+    label.textColor = kNaviBarBackColor;
     [label setText:[self.sectionTitles objectAtIndex:(section - 1)]];
     [contentView addSubview:label];
     return contentView;
@@ -493,18 +498,18 @@
         EaseUserModel *model = [[EaseUserModel alloc] initWithBuddy:buddy];
         if (model) {
             model.avatarImage = [UIImage imageNamed:@"EaseUIResource.bundle/user"];
-//            model.nickname = [[UserProfileManager sharedInstance] getNickNameWithUsername:buddy];
-//            
-//            NSString *firstLetter = [EaseChineseToPinyin pinyinFromChineseString:[[UserProfileManager sharedInstance] getNickNameWithUsername:buddy]];
-//            NSInteger section;
-//            if (firstLetter.length > 0) {
-//                section = [indexCollation sectionForObject:[firstLetter substringToIndex:1] collationStringSelector:@selector(uppercaseString)];
-//            } else {
-//                section = [sortedArray count] - 1;
-//            }
+            model.nickname = [[UserProfileManager sharedInstance] getNickNameWithUsername:buddy];
+            
+            NSString *firstLetter = [EaseChineseToPinyin pinyinFromChineseString:[[UserProfileManager sharedInstance] getNickNameWithUsername:buddy]];
+            NSInteger section;
+            if (firstLetter.length > 0) {
+                section = [indexCollation sectionForObject:[firstLetter substringToIndex:1] collationStringSelector:@selector(uppercaseString)];
+            } else {
+                section = [sortedArray count] - 1;
+            }
 
-//            NSMutableArray *array = [sortedArray objectAtIndex:section];
-//            [array addObject:model];
+            NSMutableArray *array = [sortedArray objectAtIndex:section];
+            [array addObject:model];
         }
     }
     
@@ -592,9 +597,9 @@
 
 - (void)reloadApplyView
 {
-//    NSInteger count = [[[ApplyViewController shareController] dataSource] count];
-//    self.unapplyCount = count;
-//    [self.tableView reloadData];
+    NSInteger count = [[[ApplyViewController shareController] dataSource] count];
+    self.unapplyCount = count;
+    [self.tableView reloadData];
 }
 
 - (void)reloadGroupView

@@ -27,5 +27,6 @@
 #import <YYKit/YYKit.h>
 #import <Hyphenate/Hyphenate.h>
 #import "EaseUI.h"
+#import "EMAlertView.h"
 
 #endif /* Configer_pch */

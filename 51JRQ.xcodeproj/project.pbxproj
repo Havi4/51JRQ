@@ -80,7 +80,6 @@
 		5735F48B1E7D17A500504325 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735F4841E7D17A500504325 /* AppDelegate.m */; };
 		5735F48C1E7D17A500504325 /* HiInitData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735F4861E7D17A500504325 /* HiInitData.m */; };
 		5735F48D1E7D17A500504325 /* HiThirdPartService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735F4881E7D17A500504325 /* HiThirdPartService.m */; };
-		5735F48E1E7D17A500504325 /* HiThirdServiceInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735F48A1E7D17A500504325 /* HiThirdServiceInit.m */; };
 		5735F49E1E7D1BDE00504325 /* NSData+AES256.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735F4921E7D1BDE00504325 /* NSData+AES256.m */; };
 		5735F49F1E7D1BDE00504325 /* NSData+NSNewBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735F4941E7D1BDE00504325 /* NSData+NSNewBase64.m */; };
 		5735F4A01E7D1BDE00504325 /* Encrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735F4961E7D1BDE00504325 /* Encrypt.m */; };
@@ -204,6 +203,15 @@
 		57ACB2F61E6E87E800D04A4D /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ACB2DC1E6E87E800D04A4D /* UIView+MJExtension.m */; };
 		57ACB2F71E6E87E800D04A4D /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ACB2E01E6E87E800D04A4D /* UITableView+SDAutoTableViewCellHeight.m */; };
 		57ACB2F81E6E87E800D04A4D /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ACB2E21E6E87E800D04A4D /* UIView+SDAutoLayout.m */; };
+		57F926D91E80DAC400C71DD9 /* InvitationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F926D61E80DAC400C71DD9 /* InvitationManager.m */; };
+		57F926DA1E80DAC400C71DD9 /* UserProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F926D81E80DAC400C71DD9 /* UserProfileManager.m */; };
+		57F926DF1E80F16100C71DD9 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F926DC1E80F16100C71DD9 /* AddFriendViewController.m */; };
+		57F926E01E80F16100C71DD9 /* ApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F926DE1E80F16100C71DD9 /* ApplyViewController.m */; };
+		57F926E51E80F17000C71DD9 /* AddFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F926E21E80F17000C71DD9 /* AddFriendCell.m */; };
+		57F926E61E80F17000C71DD9 /* ApplyFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F926E41E80F17000C71DD9 /* ApplyFriendCell.m */; };
+		57F926EA1E80F23200C71DD9 /* EMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F926E91E80F23200C71DD9 /* EMAlertView.m */; };
+		57F926ED1E80F5BA00C71DD9 /* ChatMessageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F926EC1E80F5BA00C71DD9 /* ChatMessageHelper.m */; };
+		57F926F01E80F82200C71DD9 /* AppDelegate+EaseMob.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F926EF1E80F82200C71DD9 /* AppDelegate+EaseMob.m */; };
 		57FB9B781E7E13CC0086E9E7 /* EMAudioPlayerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FB9AEA1E7E13CC0086E9E7 /* EMAudioPlayerUtil.m */; };
 		57FB9B791E7E13CC0086E9E7 /* EMAudioRecorderUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FB9AEC1E7E13CC0086E9E7 /* EMAudioRecorderUtil.m */; };
 		57FB9B7A1E7E13CC0086E9E7 /* EMCDDeviceManager+Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FB9AEE1E7E13CC0086E9E7 /* EMCDDeviceManager+Media.m */; };
@@ -462,8 +470,6 @@
 		5735F4861E7D17A500504325 /* HiInitData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HiInitData.m; path = InitData/HiInitData.m; sourceTree = "<group>"; };
 		5735F4871E7D17A500504325 /* HiThirdPartService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HiThirdPartService.h; path = InitData/HiThirdPartService.h; sourceTree = "<group>"; };
 		5735F4881E7D17A500504325 /* HiThirdPartService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HiThirdPartService.m; path = InitData/HiThirdPartService.m; sourceTree = "<group>"; };
-		5735F4891E7D17A500504325 /* HiThirdServiceInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HiThirdServiceInit.h; path = InitData/HiThirdServiceInit.h; sourceTree = "<group>"; };
-		5735F48A1E7D17A500504325 /* HiThirdServiceInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HiThirdServiceInit.m; path = InitData/HiThirdServiceInit.m; sourceTree = "<group>"; };
 		5735F4911E7D1BDE00504325 /* NSData+AES256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES256.h"; sourceTree = "<group>"; };
 		5735F4921E7D1BDE00504325 /* NSData+AES256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES256.m"; sourceTree = "<group>"; };
 		5735F4931E7D1BDE00504325 /* NSData+NSNewBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+NSNewBase64.h"; sourceTree = "<group>"; };
@@ -700,6 +706,24 @@
 		57ACB2E01E6E87E800D04A4D /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
 		57ACB2E11E6E87E800D04A4D /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
 		57ACB2E21E6E87E800D04A4D /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
+		57F926D51E80DAC400C71DD9 /* InvitationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitationManager.h; sourceTree = "<group>"; };
+		57F926D61E80DAC400C71DD9 /* InvitationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitationManager.m; sourceTree = "<group>"; };
+		57F926D71E80DAC400C71DD9 /* UserProfileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileManager.h; sourceTree = "<group>"; };
+		57F926D81E80DAC400C71DD9 /* UserProfileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileManager.m; sourceTree = "<group>"; };
+		57F926DB1E80F16100C71DD9 /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendViewController.h; path = FriendApply/AddFriendViewController.h; sourceTree = "<group>"; };
+		57F926DC1E80F16100C71DD9 /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendViewController.m; path = FriendApply/AddFriendViewController.m; sourceTree = "<group>"; };
+		57F926DD1E80F16100C71DD9 /* ApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplyViewController.h; path = FriendApply/ApplyViewController.h; sourceTree = "<group>"; };
+		57F926DE1E80F16100C71DD9 /* ApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplyViewController.m; path = FriendApply/ApplyViewController.m; sourceTree = "<group>"; };
+		57F926E11E80F17000C71DD9 /* AddFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFriendCell.h; path = FriendApply/AddFriendCell.h; sourceTree = "<group>"; };
+		57F926E21E80F17000C71DD9 /* AddFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFriendCell.m; path = FriendApply/AddFriendCell.m; sourceTree = "<group>"; };
+		57F926E31E80F17000C71DD9 /* ApplyFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplyFriendCell.h; path = FriendApply/ApplyFriendCell.h; sourceTree = "<group>"; };
+		57F926E41E80F17000C71DD9 /* ApplyFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ApplyFriendCell.m; path = FriendApply/ApplyFriendCell.m; sourceTree = "<group>"; };
+		57F926E81E80F23200C71DD9 /* EMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAlertView.h; sourceTree = "<group>"; };
+		57F926E91E80F23200C71DD9 /* EMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAlertView.m; sourceTree = "<group>"; };
+		57F926EB1E80F5BA00C71DD9 /* ChatMessageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatMessageHelper.h; path = MessageShow/ChatMessageHelper.h; sourceTree = "<group>"; };
+		57F926EC1E80F5BA00C71DD9 /* ChatMessageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatMessageHelper.m; path = MessageShow/ChatMessageHelper.m; sourceTree = "<group>"; };
+		57F926EE1E80F82200C71DD9 /* AppDelegate+EaseMob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AppDelegate+EaseMob.h"; path = "InitData/AppDelegate+EaseMob.h"; sourceTree = "<group>"; };
+		57F926EF1E80F82200C71DD9 /* AppDelegate+EaseMob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate+EaseMob.m"; path = "InitData/AppDelegate+EaseMob.m"; sourceTree = "<group>"; };
 		57FB9AE51E7E13CC0086E9E7 /* EMCDDeviceManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCDDeviceManagerDelegate.h; sourceTree = "<group>"; };
 		57FB9AE61E7E13CC0086E9E7 /* EMCDDeviceManagerProximitySensorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMCDDeviceManagerProximitySensorDelegate.h; sourceTree = "<group>"; };
 		57FB9AE81E7E13CC0086E9E7 /* DemoErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoErrorCode.h; sourceTree = "<group>"; };
@@ -1419,12 +1443,14 @@
 			children = (
 				5735F4831E7D17A500504325 /* AppDelegate.h */,
 				5735F4841E7D17A500504325 /* AppDelegate.m */,
+				57F926EE1E80F82200C71DD9 /* AppDelegate+EaseMob.h */,
+				57F926EF1E80F82200C71DD9 /* AppDelegate+EaseMob.m */,
+				57F926EB1E80F5BA00C71DD9 /* ChatMessageHelper.h */,
+				57F926EC1E80F5BA00C71DD9 /* ChatMessageHelper.m */,
 				5735F4851E7D17A500504325 /* HiInitData.h */,
 				5735F4861E7D17A500504325 /* HiInitData.m */,
 				5735F4871E7D17A500504325 /* HiThirdPartService.h */,
 				5735F4881E7D17A500504325 /* HiThirdPartService.m */,
-				5735F4891E7D17A500504325 /* HiThirdServiceInit.h */,
-				5735F48A1E7D17A500504325 /* HiThirdServiceInit.m */,
 			);
 			name = AppDelegate;
 			sourceTree = "<group>";
@@ -1676,6 +1702,10 @@
 			children = (
 				577A85481E5EA84D00834E61 /* MessageshowStore.h */,
 				577A85491E5EA84D00834E61 /* MessageshowStore.m */,
+				57F926D51E80DAC400C71DD9 /* InvitationManager.h */,
+				57F926D61E80DAC400C71DD9 /* InvitationManager.m */,
+				57F926D71E80DAC400C71DD9 /* UserProfileManager.h */,
+				57F926D81E80DAC400C71DD9 /* UserProfileManager.m */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -1687,6 +1717,10 @@
 				577A854B1E5EA84D00834E61 /* MessageshowView.m */,
 				575AAF711E7F803B00226862 /* BaseTableViewCell.h */,
 				575AAF721E7F803B00226862 /* BaseTableViewCell.m */,
+				57F926E11E80F17000C71DD9 /* AddFriendCell.h */,
+				57F926E21E80F17000C71DD9 /* AddFriendCell.m */,
+				57F926E31E80F17000C71DD9 /* ApplyFriendCell.h */,
+				57F926E41E80F17000C71DD9 /* ApplyFriendCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1694,6 +1728,10 @@
 		577A85851E5EA92C00834E61 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				57F926DB1E80F16100C71DD9 /* AddFriendViewController.h */,
+				57F926DC1E80F16100C71DD9 /* AddFriendViewController.m */,
+				57F926DD1E80F16100C71DD9 /* ApplyViewController.h */,
+				57F926DE1E80F16100C71DD9 /* ApplyViewController.m */,
 				575AAFC51E801CF400226862 /* ChatViewController.h */,
 				575AAFC61E801CF400226862 /* ChatViewController.m */,
 				575AAF6B1E7F7CBE00226862 /* GroupListViewController.h */,
@@ -1968,6 +2006,15 @@
 			path = SDAutoLayout;
 			sourceTree = "<group>";
 		};
+		57F926E71E80F23200C71DD9 /* EMAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				57F926E81E80F23200C71DD9 /* EMAlertView.h */,
+				57F926E91E80F23200C71DD9 /* EMAlertView.m */,
+			);
+			path = EMAlertView;
+			sourceTree = "<group>";
+		};
 		57FB9AE11E7E13CC0086E9E7 /* EMUIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -1986,6 +2033,7 @@
 		57FB9AE21E7E13CC0086E9E7 /* 3rdparty */ = {
 			isa = PBXGroup;
 			children = (
+				57F926E71E80F23200C71DD9 /* EMAlertView */,
 				57FB9BB11E7E14050086E9E7 /* MBProgressHUD */,
 				57FB9BB61E7E14050086E9E7 /* MWPhotoBrowser */,
 				57FB9AE31E7E13CC0086E9E7 /* DeviceHelper */,
@@ -2828,6 +2876,7 @@
 				5735F3B71E79382D00504325 /* SYFavoriteButton.m in Sources */,
 				577A85151E5E942300834E61 /* NSObject+AdvertisementView.m in Sources */,
 				5735F3A81E77E32D00504325 /* UIView+PYSearchExtension.m in Sources */,
+				57F926D91E80DAC400C71DD9 /* InvitationManager.m in Sources */,
 				57FB9C321E7E14060086E9E7 /* PSTCollectionViewUpdateItem.m in Sources */,
 				5735F3BA1E7943C000504325 /* PositionTitleTableViewCell.m in Sources */,
 				5735F42D1E7A80C700504325 /* SDWebImageDecoder.m in Sources */,
@@ -2856,6 +2905,7 @@
 				57FB9C301E7E14060086E9E7 /* PSTCollectionViewItemKey.m in Sources */,
 				57FB9B9C1E7E13CC0086E9E7 /* EaseBaseMessageCell.m in Sources */,
 				577A851D1E5E959F00834E61 /* Global.m in Sources */,
+				57F926ED1E80F5BA00C71DD9 /* ChatMessageHelper.m in Sources */,
 				577A85E11E5EAA3400834E61 /* MIUtilities.m in Sources */,
 				57FB9B8B1E7E13CC0086E9E7 /* UIViewController+DismissKeyboard.m in Sources */,
 				57ACB2E81E6E87E800D04A4D /* MJRefreshAutoGifFooter.m in Sources */,
@@ -2895,6 +2945,7 @@
 				57FB9C1E1E7E14060086E9E7 /* EMSDWebImageDownloaderOperation.m in Sources */,
 				577A85691E5EA86200834E61 /* CompanyshowViewController.m in Sources */,
 				577A85671E5EA86200834E61 /* CompanyshowStore.m in Sources */,
+				57F926E01E80F16100C71DD9 /* ApplyViewController.m in Sources */,
 				577A85D81E5EAA3300834E61 /* EXTRuntimeExtensions.m in Sources */,
 				5735F3CF1E79797200504325 /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
 				577A85E21E5EAA3400834E61 /* MIPipeline.m in Sources */,
@@ -2908,13 +2959,16 @@
 				57FB9C1A1E7E14060086E9E7 /* EMSDImageCache.m in Sources */,
 				57FB9C151E7E14050086E9E7 /* MWPhotoBrowser.m in Sources */,
 				5735F47F1E7BB50000504325 /* RxWebViewNavigationViewController.m in Sources */,
+				57F926EA1E80F23200C71DD9 /* EMAlertView.m in Sources */,
 				5735F43E1E7A8B3200504325 /* YUMixtureView.m in Sources */,
+				57F926E51E80F17000C71DD9 /* AddFriendCell.m in Sources */,
 				577A85E81E5EAA3400834E61 /* UIView+MIPipeline.m in Sources */,
 				577A85741E5EA86C00834E61 /* JobshowView.m in Sources */,
 				57ACB2F81E6E87E800D04A4D /* UIView+SDAutoLayout.m in Sources */,
 				5735F47D1E7BB50000504325 /* NJKWebViewProgressView.m in Sources */,
 				57FB9B911E7E13CC0086E9E7 /* EaseEmojiEmoticons.m in Sources */,
 				5735F4291E7A80C700504325 /* MKAnnotationView+WebCache.m in Sources */,
+				57F926F01E80F82200C71DD9 /* AppDelegate+EaseMob.m in Sources */,
 				5735F48C1E7D17A500504325 /* HiInitData.m in Sources */,
 				577A85511E5EA84D00834E61 /* MessageshowViewController.m in Sources */,
 				575AAFC71E801CF400226862 /* ChatViewController.m in Sources */,
@@ -2976,6 +3030,8 @@
 				57FB9B9E1E7E13CC0086E9E7 /* EaseMessageCell.m in Sources */,
 				577A85661E5EA86200834E61 /* CompanyshowPipeline.m in Sources */,
 				577A85411E5E9F0100834E61 /* CYLPlusButtonSubclass.m in Sources */,
+				57F926DA1E80DAC400C71DD9 /* UserProfileManager.m in Sources */,
+				57F926DF1E80F16100C71DD9 /* AddFriendViewController.m in Sources */,
 				57FB9B961E7E13CC0086E9E7 /* EaseLocationViewController.m in Sources */,
 				5735F4001E7A7C3700504325 /* TAAbstractDotView.m in Sources */,
 				577A85DD1E5EAA3400834E61 /* NSMethodSignature+EXT.m in Sources */,
@@ -2992,7 +3048,6 @@
 				57FB9C171E7E14050086E9E7 /* MWTapDetectingView.m in Sources */,
 				577A855A1E5EA85700834E61 /* ConselorshowPipeline.m in Sources */,
 				57FB9C251E7E14060086E9E7 /* UIImage+EMMultiFormat.m in Sources */,
-				5735F48E1E7D17A500504325 /* HiThirdServiceInit.m in Sources */,
 				5735F3C11E79777800504325 /* SubLBXScanViewController.m in Sources */,
 				577A85311E5E96EC00834E61 /* CYLTabBarController.m in Sources */,
 				577A855B1E5EA85700834E61 /* ConselorshowStore.m in Sources */,
@@ -3000,6 +3055,7 @@
 				57FB9BB01E7E13CC0086E9E7 /* EaseConversationCell.m in Sources */,
 				57FB9B7F1E7E13CC0086E9E7 /* amrFileCodec.mm in Sources */,
 				57FB9B7A1E7E13CC0086E9E7 /* EMCDDeviceManager+Media.m in Sources */,
+				57F926E61E80F17000C71DD9 /* ApplyFriendCell.m in Sources */,
 				5735F49F1E7D1BDE00504325 /* NSData+NSNewBase64.m in Sources */,
 				5735F3D41E797B6600504325 /* LBXScanVideoZoomView.m in Sources */,
 				57FB9C1F1E7E14060086E9E7 /* EMSDWebImageManager.m in Sources */,

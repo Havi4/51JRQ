@@ -818,6 +818,11 @@
     [self setSearchHistoryStyle:self.searchHistoryStyle];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)setSearchHistoryStyle:(PYSearchHistoryStyle)searchHistoryStyle
 {
     _searchHistoryStyle = searchHistoryStyle;

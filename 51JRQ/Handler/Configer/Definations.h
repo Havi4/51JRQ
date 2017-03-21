@@ -14,6 +14,10 @@
 
 #define kAppBaseURL @"https://m.51jrq.com/mobile2/"
 #define kAppTestBaseURL @"http://webservice.meddo99.com:9001/"
+//环信id配置
+#define kHyphenateApnsCertName @"chatdemoui_dev"
+#define kHyphenateAppkey       @"easemob-demo#chatdemoui"
+
 #define kKeyWindow [UIApplication sharedApplication].keyWindow
 #define kUserDefaults [NSUserDefaults standardUserDefaults]
 #define kAdImageName @"adImageName";

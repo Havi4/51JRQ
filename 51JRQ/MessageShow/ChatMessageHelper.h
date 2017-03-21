@@ -12,22 +12,22 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ConversationListController.h"
+#import "ConversationListViewController.h"
 #import "ContactListViewController.h"
-#import "MainViewController.h"
+//#import "MainViewController.h"
 #import "ChatViewController.h"
 
 #define kHaveUnreadAtMessage    @"kHaveAtMessage"
 #define kAtYouMessage           1
 #define kAtAllMessage           2
 
-@interface ChatDemoHelper : NSObject <EMClientDelegate,EMChatManagerDelegate,EMContactManagerDelegate,EMGroupManagerDelegate,EMChatroomManagerDelegate>
+@interface ChatMessageHelper : NSObject <EMClientDelegate,EMChatManagerDelegate,EMContactManagerDelegate,EMGroupManagerDelegate,EMChatroomManagerDelegate>
 
 @property (nonatomic, weak) ContactListViewController *contactViewVC;
 
-@property (nonatomic, weak) ConversationListController *conversationListVC;
+@property (nonatomic, weak) ConversationListViewController *conversationListVC;
 
-@property (nonatomic, weak) MainViewController *mainVC;
+//@property (nonatomic, weak) MainViewController *mainVC;
 
 @property (nonatomic, weak) ChatViewController *chatVC;
 
