@@ -37,7 +37,7 @@
                 [[EMClient sharedClient] migrateDatabaseToLatestSDK];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [[ChatMessageHelper shareHelper] asyncGroupFromServer];
-//                    [[ChatMessageHelper shareHelper] asyncConversationFromDB];
+                    [[ChatMessageHelper shareHelper] asyncConversationFromDB];
                     [[ChatMessageHelper shareHelper] asyncPushOptions];
                         //发送自动登陆状态通知
                     [[NSNotificationCenter defaultCenter] postNotificationName:KNOTIFICATION_LOGINCHANGE object:@([[EMClient sharedClient] isLoggedIn])];
