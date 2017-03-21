@@ -115,6 +115,7 @@
 		575AAF8B1E7F843800226862 /* newFriends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 575AAF811E7F843800226862 /* newFriends@2x.png */; };
 		575AAFA21E7FDD4500226862 /* SearchResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575AAFA11E7FDD4500226862 /* SearchResultTableViewController.m */; };
 		575AAFA51E800F7F00226862 /* UINavigationController+UIStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 575AAFA41E800F7F00226862 /* UINavigationController+UIStatusBar.m */; };
+		575AAFC71E801CF400226862 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575AAFC61E801CF400226862 /* ChatViewController.m */; };
 		577A84CC1E5E8ED800834E61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A84CB1E5E8ED800834E61 /* main.m */; };
 		577A84D81E5E8ED800834E61 /* _1JRQ.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 577A84D61E5E8ED800834E61 /* _1JRQ.xcdatamodeld */; };
 		577A84DA1E5E8ED800834E61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577A84D91E5E8ED800834E61 /* Assets.xcassets */; };
@@ -510,6 +511,8 @@
 		575AAFA11E7FDD4500226862 /* SearchResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableViewController.m; sourceTree = "<group>"; };
 		575AAFA31E800F7F00226862 /* UINavigationController+UIStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+UIStatusBar.h"; sourceTree = "<group>"; };
 		575AAFA41E800F7F00226862 /* UINavigationController+UIStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+UIStatusBar.m"; sourceTree = "<group>"; };
+		575AAFC51E801CF400226862 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		575AAFC61E801CF400226862 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		577A84C71E5E8ED800834E61 /* 51JRQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 51JRQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577A84CB1E5E8ED800834E61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		577A84D71E5E8ED800834E61 /* _1JRQ.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _1JRQ.xcdatamodel; sourceTree = "<group>"; };
@@ -1691,6 +1694,8 @@
 		577A85851E5EA92C00834E61 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				575AAFC51E801CF400226862 /* ChatViewController.h */,
+				575AAFC61E801CF400226862 /* ChatViewController.m */,
 				575AAF6B1E7F7CBE00226862 /* GroupListViewController.h */,
 				575AAF6C1E7F7CBE00226862 /* GroupListViewController.m */,
 				575AAF681E7F6DD300226862 /* ContactListViewController.h */,
@@ -2912,6 +2917,7 @@
 				5735F4291E7A80C700504325 /* MKAnnotationView+WebCache.m in Sources */,
 				5735F48C1E7D17A500504325 /* HiInitData.m in Sources */,
 				577A85511E5EA84D00834E61 /* MessageshowViewController.m in Sources */,
+				575AAFC71E801CF400226862 /* ChatViewController.m in Sources */,
 				5735F3AD1E7839B500504325 /* NewsTableViewCell.m in Sources */,
 				5735F4051E7A7C3700504325 /* SDCycleScrollView.m in Sources */,
 				577A854E1E5EA84D00834E61 /* MessageshowPipeline.m in Sources */,

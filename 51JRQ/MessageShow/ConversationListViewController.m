@@ -8,7 +8,11 @@
 
 #import "ConversationListViewController.h"
 #import "ContactListViewController.h"
-//#import "ChatViewController.h"
+#import "SearchResultTableViewController.h"
+#import "PYSearchViewController.h"
+#import "UIView+PYSearchExtension.h"
+#import "NSBundle+PYSearchExtension.h"
+#import "ChatViewController.h"
 //#import "RobotManager.h"
 //#import "RobotChatViewController.h"
 //#import "UserProfileManager.h"
@@ -16,9 +20,9 @@
 //#import "RedPacketChatViewController.h"
 //#import "ChatDemoHelper.h"
 
-@interface ConversationListViewController ()<EaseConversationListViewControllerDelegate, EaseConversationListViewControllerDataSource>
+@interface ConversationListViewController ()<EaseConversationListViewControllerDelegate, EaseConversationListViewControllerDataSource,UISearchControllerDelegate,UISearchBarDelegate,PYSearchViewControllerDelegate>
 @property (nonatomic, strong) UIView *networkStateView;
-
+@property (nonatomic, strong) UISearchBar *searchBar;
 
 @end
 
@@ -32,6 +36,7 @@
     self.dataSource = self;
     [self setNaviBaritem];
     [self networkStateView];
+    [self initNaviBar];
     [self tableViewDidTriggerHeaderRefresh];
     [self removeEmptyConversationsFromDB];
 }
@@ -40,6 +45,75 @@
 {
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"adress_book"] style:UIBarButtonItemStylePlain target:self action:@selector(showAdressBook)];
 }
+
+- (void)initNaviBar
+{
+    UIView *titleView = [[UIView alloc] init];
+    titleView.py_x = 10 * 0.5;
+    titleView.py_y = 7;
+    titleView.py_width = kScreen_Width - 59 - 15;
+    titleView.py_height = 30;
+    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:titleView.bounds];
+    [titleView addSubview:searchBar];
+    titleView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    self.navigationItem.titleView = titleView;
+        // 关闭自动调整
+    searchBar.translatesAutoresizingMaskIntoConstraints = NO;
+        // 为titleView添加约束来调整搜索框
+    NSLayoutConstraint *widthCons = [NSLayoutConstraint constraintWithItem:searchBar attribute:NSLayoutAttributeWidth  relatedBy:NSLayoutRelationEqual toItem:titleView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
+    NSLayoutConstraint *heightCons = [NSLayoutConstraint constraintWithItem:searchBar attribute:NSLayoutAttributeHeight  relatedBy:NSLayoutRelationEqual toItem:titleView attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
+    NSLayoutConstraint *xCons = [NSLayoutConstraint constraintWithItem:searchBar attribute:NSLayoutAttributeTop  relatedBy:NSLayoutRelationEqual toItem:titleView attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    NSLayoutConstraint *yCons = [NSLayoutConstraint constraintWithItem:searchBar attribute:NSLayoutAttributeLeft  relatedBy:NSLayoutRelationEqual toItem:titleView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
+    [titleView addConstraint:widthCons];
+    [titleView addConstraint:heightCons];
+    [titleView addConstraint:xCons];
+    [titleView addConstraint:yCons];
+    searchBar.placeholder = @"搜索";
+    searchBar.backgroundImage = [NSBundle py_imageNamed:@"clearImage"];
+    searchBar.delegate = self;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"add_new"] style:UIBarButtonItemStylePlain target:self action:@selector(addNewFriend)];
+}
+
+- (UISearchBar *)searchBar
+{
+    if (!_searchBar) {
+        _searchBar = [[UISearchBar alloc]init];
+        _searchBar.placeholder = @"搜索资讯、活动、职位";
+        _searchBar.frame = CGRectMake(15, 0, kScreen_Width-15-59, 44);
+        _searchBar.delegate = self;
+    }
+    return _searchBar;
+}
+
+#pragma mark search Bar delegate
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+    return YES;
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    DeBugLog(@"search bar done");
+        // 1. 创建热门搜索
+    NSArray *hotSeaches = @[@"HR大培训",@"理财师专场",@"金茂大厦"];
+        // 2. 创建控制器
+    PYSearchViewController *searchViewController = [PYSearchViewController searchViewControllerWithHotSearches:hotSeaches searchBarPlaceholder:@"搜索资讯、活动、职位" didSearchBlock:^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText) {
+            // 如：跳转到指定控制器
+            //        [searchViewController.navigationController pushViewController:[[PYTempViewController alloc] init] animated:YES];
+    }];
+        // 3. 设置风格
+    searchViewController.hotSearchStyle = PYHotSearchStyleARCBorderTag; // 热门搜索风格根据选择
+    searchViewController.searchHistoryStyle = PYHotSearchStyleDefault; // 搜索历史风格为default
+    searchViewController.hotSearchStyle = PYHotSearchStyleDefault; // 热门搜索风格为默认
+    searchViewController.searchHistoryStyle = PYSearchHistoryStyleBorderTag; // 搜索历史风格根据选择
+                                                                             // 4. 设置代理
+    searchViewController.delegate = self;
+        // 5. 跳转到搜索控制器
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:searchViewController];
+    [self presentViewController:nav animated:NO completion:nil];
+}
+
 
 - (void)showAdressBook
 {
@@ -105,27 +179,17 @@
 - (void)conversationListViewController:(EaseConversationListViewController *)conversationListViewController
             didSelectConversationModel:(id<IConversationModel>)conversationModel
 {
-//    if (conversationModel) {
-//        EMConversation *conversation = conversationModel.conversation;
-//        if (conversation) {
-//            if ([[RobotManager sharedInstance] isRobotWithUsername:conversation.conversationId]) {
-//                RobotChatViewController *chatController = [[RobotChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
-//                chatController.title = [[RobotManager sharedInstance] getRobotNickWithUsername:conversation.conversationId];
-//                [self.navigationController pushViewController:chatController animated:YES];
-//            } else {
-//                UIViewController *chatController = nil;
-//#ifdef REDPACKET_AVALABLE
-//                chatController = [[RedPacketChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
-//#else
-//                chatController = [[ChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
-//#endif
-//                chatController.title = conversationModel.title;
-//                [self.navigationController pushViewController:chatController animated:YES];
-//            }
-//        }
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"setupUnreadMessageCount" object:nil];
-//        [self.tableView reloadData];
-//    }
+    if (conversationModel) {
+        EMConversation *conversation = conversationModel.conversation;
+        if (conversation) {
+            UIViewController *chatController = nil;
+            chatController = [[ChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
+            chatController.title = conversationModel.title;
+            [self.navigationController pushViewController:chatController animated:YES];
+        }
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"setupUnreadMessageCount" object:nil];
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - EaseConversationListViewControllerDataSource
