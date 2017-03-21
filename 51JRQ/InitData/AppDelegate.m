@@ -82,6 +82,10 @@
     [self saveContext];
 }
 
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    [[EMClient sharedClient] bindDeviceToken:deviceToken];
+}
+
 
 #pragma mark - Core Data stack
 

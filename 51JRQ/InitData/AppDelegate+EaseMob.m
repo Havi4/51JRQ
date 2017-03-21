@@ -23,6 +23,8 @@
 - (void)initWithApplication:(UIApplication *)application launchingWithOptions:(NSDictionary *)launchOptions
 {
     [self easemobApplication:application didFinishLaunchingWithOptions:launchOptions appkey:kHyphenateAppkey apnsCertName:kHyphenateApnsCertName otherConfig:@{kSDKConfigEnableConsoleLogger:[NSNumber numberWithBool:YES]}];
+        //设置推送
+        //iOS8以上 注册APNS
 }
 
 - (void)easemobApplication:(UIApplication *)application
