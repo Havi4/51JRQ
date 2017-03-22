@@ -10,4 +10,10 @@
 
 @interface ConselorshowPipeline : MIPipeline
 
+@property (nonatomic, strong) NSMutableArray *conselorJobArr;
+@property (nonatomic, assign) BOOL isRequestDone;
+@property (nonatomic, assign) BOOL isRefresh;
+@property (nonatomic, assign) BOOL isLoadingMore;
+@property (nonatomic, assign) NSInteger pageNum;
+
 @end

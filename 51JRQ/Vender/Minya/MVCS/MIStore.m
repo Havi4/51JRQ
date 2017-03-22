@@ -24,7 +24,7 @@
         
         _context = context;
         
-//        [self addObservers];
+        [self addObservers];
     }
     
     return self;

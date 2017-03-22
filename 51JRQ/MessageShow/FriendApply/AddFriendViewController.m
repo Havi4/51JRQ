@@ -37,7 +37,7 @@
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
         [self setEdgesForExtendedLayout:UIRectEdgeNone];
     }
-    self.title = NSLocalizedString(@"friend.add", @"Add friend");
+    self.title = NSLocalizedString(@"添加好友", @"Add friend");
     self.view.backgroundColor = [UIColor colorWithRed:0.88 green:0.88 blue:0.88 alpha:1.0];
     
     [self.view addSubview:self.headerView];
@@ -56,18 +56,11 @@
     
     UIButton *searchButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 44)];
     searchButton.accessibilityIdentifier = @"search_contact";
-    [searchButton setTitle:NSLocalizedString(@"search", @"Search") forState:UIControlStateNormal];
-    [searchButton setTitleColor:[UIColor colorWithRed:32 / 255.0 green:134 / 255.0 blue:158 / 255.0 alpha:1.0] forState:UIControlStateNormal];
-    [searchButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [searchButton setTitle:NSLocalizedString(@"搜索", @"Search") forState:UIControlStateNormal];
+    [searchButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [searchButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
     [searchButton addTarget:self action:@selector(searchAction) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:searchButton]];
-    
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    backButton.accessibilityIdentifier = @"back";
-    [backButton setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
-    [backButton addTarget:self.navigationController action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    [self.navigationItem setLeftBarButtonItem:backItem];
     
     [self.view addSubview:self.textField];
 }
@@ -97,7 +90,7 @@
         _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         _textField.font = [UIFont systemFontOfSize:15.0];
         _textField.backgroundColor = [UIColor whiteColor];
-        _textField.placeholder = NSLocalizedString(@"friend.inputNameToSearch", @"input to find friends");
+        _textField.placeholder = NSLocalizedString(@"搜索好友名称", @"input to find friends");
         _textField.returnKeyType = UIReturnKeyDone;
         _textField.delegate = self;
         [_headerView addSubview:_textField];
@@ -149,22 +142,22 @@
     self.selectedIndexPath = indexPath;
     NSString *buddyName = [self.dataSource objectAtIndex:indexPath.row];
     if ([self didBuddyExist:buddyName]) {
-        NSString *message = [NSString stringWithFormat:NSLocalizedString(@"friend.repeat", @"'%@'has been your friend!"), buddyName];
+        NSString *message = [NSString stringWithFormat:NSLocalizedString(@"您和", @"'%@'已经是好友!"), buddyName];
         
         [EMAlertView showAlertWithTitle:message
                                 message:nil
                         completionBlock:nil
-                      cancelButtonTitle:NSLocalizedString(@"ok", @"OK")
+                      cancelButtonTitle:NSLocalizedString(@"好的", @"OK")
                       otherButtonTitles:nil];
 
     }
     else if([self hasSendBuddyRequest:buddyName])
     {
-        NSString *message = [NSString stringWithFormat:NSLocalizedString(@"friend.repeatApply", @"you have send fridend request to '%@'!"), buddyName];
+        NSString *message = [NSString stringWithFormat:NSLocalizedString(@"", @"已经发送好友请求 '%@'!"), buddyName];
         [EMAlertView showAlertWithTitle:message
                                 message:nil
                         completionBlock:nil
-                      cancelButtonTitle:NSLocalizedString(@"ok", @"OK")
+                      cancelButtonTitle:NSLocalizedString(@"好的", @"OK")
                       otherButtonTitles:nil];
         
     }else{

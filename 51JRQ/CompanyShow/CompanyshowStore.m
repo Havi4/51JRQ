@@ -29,8 +29,44 @@
     return self;
 }
 
+
 - (void)fetchData {
-    
+    NSDictionary *dataDic = @{
+                              @"pageNo":[NSString stringWithFormat:@"%i",(int)self.companyshowPipeline.pageNum],
+                              @"keyword":@"",
+                              @"publicdate":@"",
+                              @"industryid":@"",
+                              @"areaid":@""
+                              };
+    [[BaseNetworking sharedAPIManager] searchCompanyJobWith:dataDic success:^(id response) {
+        if ([[[(NSDictionary*)response objectForKey:@"data"] objectForKey:@"list"] count] > 0) {
+            self.companyshowPipeline.pageNum += 1;
+            [self.companyshowPipeline.companyJobArr addObjectsFromArray:[[(NSDictionary*)response objectForKey:@"data"] objectForKey:@"list"]];
+        }
+        self.companyshowPipeline.isRequestDone = YES;
+    } fail:^(NSError *error) {
+        
+    }];
+
+}
+
+- (void)loadRefresh
+{
+    NSDictionary *dataDic = @{
+                              @"pageNo":@"1",
+                              @"keyword":@"",
+                              @"publicdate":@"",
+                              @"industryid":@"",
+                              @"areaid":@""
+                              };
+    [[BaseNetworking sharedAPIManager] searchCompanyJobWith:dataDic success:^(id response) {
+        self.companyshowPipeline.pageNum = 1;
+        [self.companyshowPipeline.companyJobArr removeAllObjects];
+        [self.companyshowPipeline.companyJobArr addObjectsFromArray:[[(NSDictionary*)response objectForKey:@"data"] objectForKey:@"list"]];
+        self.companyshowPipeline.isRequestDone = YES;
+    } fail:^(NSError *error) {
+
+    }];
 }
 
 - (__kindof MIPipeline *)pipeline {
@@ -38,7 +74,16 @@
 }
 
 - (void)addObservers {
-    
+    @weakify(self);
+    [MIObserve(self.companyshowPipeline,isRefresh) changed:^(id  _Nonnull newValue) {
+        @strongify(self);
+        [self loadRefresh];
+    }];
+
+    [MIObserve(self.companyshowPipeline,isLoadingMore) changed:^(id  _Nonnull newValue) {
+        @strongify(self);
+        [self fetchData];
+    }];
 }
 
 + (NSArray<NSString *> *)requiredParameters {

@@ -2583,7 +2583,7 @@
 					577A84C61E5E8ED800834E61 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = CF99UB3L46;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					577A84E21E5E8ED800834E61 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -3209,6 +3209,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CF99UB3L46;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3228,6 +3229,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ihotkeys.ihotkeys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6068214e-b7ba-4f4c-81f5-cbcd212c206b";
+				PROVISIONING_PROFILE_SPECIFIER = "ihotkeys-develop-profile";
 			};
 			name = Debug;
 		};
@@ -3237,6 +3240,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CF99UB3L46;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3256,6 +3260,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ihotkeys.ihotkeys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6068214e-b7ba-4f4c-81f5-cbcd212c206b";
+				PROVISIONING_PROFILE_SPECIFIER = "ihotkeys-develop-profile";
 			};
 			name = Release;
 		};

@@ -10,4 +10,6 @@
 
 @interface CompanyJobTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) NSDictionary *jobDetailInfo;
+
 @end

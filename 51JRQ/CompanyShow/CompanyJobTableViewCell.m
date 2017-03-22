@@ -26,7 +26,6 @@
         _positionImageView.layer.borderWidth = 5;
         _positionImageView.layer.cornerRadius = 40;
         _positionImageView.layer.masksToBounds = YES;
-//        [_positionImageView setImageURL:[NSURL URLWithString:@"http://k2.jsqq.net/uploads/allimg/1703/7_170309143102_9.jpg"]];
 
         _positionImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
         [self.contentView sd_addSubviews:@[_positionImageView]];
@@ -82,6 +81,14 @@
     return self;
 }
 
+- (void)setJobDetailInfo:(NSDictionary *)jobDetailInfo
+{
+    [_positionImageView setImageWithURL:[NSURL URLWithString:[jobDetailInfo objectForKey:@"headimg"]] placeholder:nil];
+    _positionTitle.text = [jobDetailInfo objectForKey:@"jobname"];
+    _companyName.text = [jobDetailInfo objectForKey:@"corpname"];
+    _companyLocation.text = [jobDetailInfo objectForKey:@"jobcity"];
+    _moneyChoice.text = [jobDetailInfo objectForKey:@"salary"];
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

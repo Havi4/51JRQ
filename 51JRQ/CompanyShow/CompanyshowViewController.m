@@ -21,12 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Add you own code
+//    [self.store fetchData];不需要了
+
 }
 
 - (void)setupPipeline:(__kindof MIPipeline *)pipeline {
     self.pipeline = pipeline;
 }
-
-
 
 @end

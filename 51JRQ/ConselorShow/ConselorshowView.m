@@ -32,9 +32,10 @@
         self.backgroundColor = [UIColor clearColor];
         [self addSubview:self.jobShowTableView];
         self.jobShowTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-
-            // Enter the refresh status immediately
         [self.jobShowTableView.mj_header beginRefreshing];
+        self.jobShowTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+            [self loadNextData];
+        }];
 
     }
     return self;
@@ -75,7 +76,7 @@
 #pragma mark tableview delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.pipeline.conselorJobArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -90,6 +91,7 @@
         if (!cell) {
             cell = [[CompanyJobTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([CompanyJobTableViewCell class])];
         }
+        cell.jobDetailInfo = [self.pipeline.conselorJobArr objectAtIndex:indexPath.row];
         return cell;
     }
 }
@@ -105,16 +107,23 @@
 
 - (void)loadNewData
 {
-        //    NSString *path = [[NSBundle mainBundle]pathForResource:@"homeData" ofType:@"plist"];
-        //    [self.dic addObjectsFromArray:[NSArray arrayWithContentsOfFile:path]];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.jobShowTableView.mj_header endRefreshing];
-            //        [self.orderView reloadData];
-    });
+    self.pipeline.isRefresh = YES;
+}
+
+- (void)loadNextData
+{
+    self.pipeline.isLoadingMore = YES;
 }
 
 - (void)setupPipeline:(__kindof MIPipeline *)pipeline {
     self.pipeline = pipeline;
+    @weakify(self)
+    [MIObserve(self.pipeline, isRequestDone) changed:^(id  _Nonnull newValue) {
+        @strongify(self)
+        [self.jobShowTableView.mj_header endRefreshing];
+        [self.jobShowTableView.mj_footer endRefreshing];
+        [self.jobShowTableView reloadData];
+    }];
 }
 
 @end

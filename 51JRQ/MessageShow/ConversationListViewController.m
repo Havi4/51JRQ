@@ -14,6 +14,7 @@
 #import "NSBundle+PYSearchExtension.h"
 #import "ChatViewController.h"
 #import "UserProfileManager.h"
+#import "AddFriendViewController.h"
 //#import "RobotManager.h"
 //#import "RobotChatViewController.h"
 //#import "RealtimeSearchUtil.h"
@@ -45,6 +46,7 @@
 - (void)setNaviBaritem
 {
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"adress_book"] style:UIBarButtonItemStylePlain target:self action:@selector(showAdressBook)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"add_new"] style:UIBarButtonItemStylePlain target:self action:@selector(addNewFriend)];
 }
 
 - (void)initNaviBar
@@ -72,7 +74,7 @@
     searchBar.placeholder = @"搜索";
     searchBar.backgroundImage = [NSBundle py_imageNamed:@"clearImage"];
     searchBar.delegate = self;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"add_new"] style:UIBarButtonItemStylePlain target:self action:@selector(addNewFriend)];
+
 }
 
 - (UISearchBar *)searchBar
@@ -84,6 +86,13 @@
         _searchBar.delegate = self;
     }
     return _searchBar;
+}
+
+- (void)addNewFriend
+{
+    AddFriendViewController *addController = [[AddFriendViewController alloc] init];
+    [self.navigationController pushViewController:addController animated:YES];
+
 }
 
 #pragma mark search Bar delegate

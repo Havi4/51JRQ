@@ -10,4 +10,12 @@
 
 @implementation ConselorshowPipeline
 
+- (NSMutableArray *)conselorJobArr
+{
+    if (!_conselorJobArr) {
+        _conselorJobArr = [[NSMutableArray alloc]init];
+    }
+    return _conselorJobArr;
+}
+
 @end

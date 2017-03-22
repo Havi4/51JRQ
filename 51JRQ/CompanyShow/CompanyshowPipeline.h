@@ -10,4 +10,10 @@
 
 @interface CompanyshowPipeline : MIPipeline
 
+@property (nonatomic, strong) NSMutableArray *companyJobArr;
+@property (nonatomic, assign) BOOL isRequestDone;
+@property (nonatomic, assign) BOOL isRefresh;
+@property (nonatomic, assign) BOOL isLoadingMore;
+@property (nonatomic, assign) NSInteger pageNum;
+
 @end

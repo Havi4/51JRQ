@@ -10,4 +10,13 @@
 
 @implementation CompanyshowPipeline
 
+- (NSMutableArray *)companyJobArr
+{
+    if (!_companyJobArr) {
+        _companyJobArr = [[NSMutableArray alloc]init];
+    }
+    return _companyJobArr;
+}
+
+
 @end
