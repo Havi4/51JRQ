@@ -122,6 +122,10 @@
         [self.jobShowTableView.mj_footer endRefreshing];
         [self.jobShowTableView reloadData];
     }];
+
+    [MIObserve(self.pipeline, isCompanyInfoDone) changed:^(id  _Nonnull newValue) {
+        [self.headerBackView setCompanyInfo:self.pipeline.companyInfoArr];
+    }];
 }
 
 @end

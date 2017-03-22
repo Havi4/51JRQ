@@ -15,6 +15,7 @@
 @property (nonatomic, strong) UIImageView *titleImage;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIView *line;
+@property (nonatomic, strong) SDCycleScrollView *cycleScrollView2;
 
 @end
 
@@ -77,6 +78,7 @@
     NSArray *imagesURLStrings = @[
                                   @"http://scimg.jb51.net/allimg/150629/14-1506291A242927.jpg",
                                   @"http://pic32.photophoto.cn/20140711/0011024086081224_b.jpg",
+                                  @"http://pic.58pic.com/58pic/13/87/72/73t58PICjpT_1024.jpg",
                                   @"http://pic.58pic.com/58pic/13/87/72/73t58PICjpT_1024.jpg"
                                   ];
 
@@ -86,22 +88,22 @@
                         @"兴业银行股份有限公司上海分公司",
                         @"兴业银行股份有限公司上海分公司"
                         ];
-    SDCycleScrollView *cycleScrollView2 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, kRealSize(50), kScreen_Width, kRealSize(320)) delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    _cycleScrollView2 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, kRealSize(50), kScreen_Width, kRealSize(320)) delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
 
-    cycleScrollView2.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
-    cycleScrollView2.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
-    cycleScrollView2.titlesGroup = titles;
-    cycleScrollView2.titleLabelBackgroundColor = [UIColor clearColor];
-    cycleScrollView2.titleLabelTextAlignment = NSTextAlignmentCenter;
-    cycleScrollView2.titleLabelTextFont = [UIFont systemFontOfSize:kRealSize(30) weight:5];
-    cycleScrollView2.pageDotImage = [UIImage imageNamed:@"normal_dot"];
-    cycleScrollView2.currentPageDotImage = [UIImage imageNamed:@"current_dot"]; // 自定义分页控件小圆标颜色
-    [self addSubview:cycleScrollView2];
-    [self insertSubview:cycleScrollView2 belowSubview:_titleImage];
+    _cycleScrollView2.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
+    _cycleScrollView2.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
+    _cycleScrollView2.titlesGroup = titles;
+    _cycleScrollView2.titleLabelBackgroundColor = [UIColor clearColor];
+    _cycleScrollView2.titleLabelTextAlignment = NSTextAlignmentCenter;
+    _cycleScrollView2.titleLabelTextFont = [UIFont systemFontOfSize:kRealSize(30) weight:5];
+    _cycleScrollView2.pageDotImage = [UIImage imageNamed:@"normal_dot"];
+    _cycleScrollView2.currentPageDotImage = [UIImage imageNamed:@"current_dot"]; // 自定义分页控件小圆标颜色
+    [self addSubview:_cycleScrollView2];
+    [self insertSubview:_cycleScrollView2 belowSubview:_titleImage];
 
         //         --- 模拟加载延迟
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        cycleScrollView2.imageURLStringsGroup = imagesURLStrings;
+        _cycleScrollView2.imageURLStringsGroup = imagesURLStrings;
     });
 }
 
@@ -112,13 +114,16 @@
     NSLog(@"---点击了第%ld张图片", (long)index);
 }
 
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)setCompanyInfo:(NSArray *)companyInfo
+{
+    NSMutableArray *titleArr = @[].mutableCopy;
+    NSMutableArray *imageArr = @[].mutableCopy;
+    for (int i = 0; i< 5; i++) {
+        [titleArr addObject:[[companyInfo objectAtIndex:i] objectForKey:@"corpname"]];
+        [imageArr addObject:[[[companyInfo objectAtIndex:i] objectForKey:@"mblog"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    }
+    self.cycleScrollView2.titlesGroup = titleArr;
+    self.cycleScrollView2.imageURLStringsGroup = imageArr;
 }
-*/
 
 @end

@@ -206,4 +206,15 @@
 - (void)getJobDetailDataWith:(NSDictionary *)params
                      success:(HYBResponseSuccess)success
                         fail:(HYBResponseFail)fail;
+
+/**
+ 企业查找
+
+ @param params 参数
+ @param success 成功
+ @param fail 失败
+ */
+- (void)searchCompanyInfoWith:(NSDictionary *)params
+                     success:(HYBResponseSuccess)success
+                        fail:(HYBResponseFail)fail;
 @end

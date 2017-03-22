@@ -181,6 +181,10 @@
 		577A85E81E5EAA3400834E61 /* UIView+MIPipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A85D01E5EAA3300834E61 /* UIView+MIPipeline.m */; };
 		577A85EB1E5EAAC100834E61 /* CYNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A85EA1E5EAAC100834E61 /* CYNavigationViewController.m */; };
 		577A86081E5FCF1B00834E61 /* BaseNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A86071E5FCF1B00834E61 /* BaseNetworking.m */; };
+		578F08A91E8225B800351FF1 /* CompanyinfoPipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 578F08A21E8225B800351FF1 /* CompanyinfoPipeline.m */; };
+		578F08AA1E8225B800351FF1 /* CompanyinfoStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 578F08A41E8225B800351FF1 /* CompanyinfoStore.m */; };
+		578F08AB1E8225B800351FF1 /* CompanyinfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578F08A61E8225B800351FF1 /* CompanyinfoView.m */; };
+		578F08AC1E8225B800351FF1 /* CompanyinfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 578F08A81E8225B800351FF1 /* CompanyinfoViewController.m */; };
 		57ACB2E31E6E87E800D04A4D /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ACB2B11E6E87E800D04A4D /* MJRefreshAutoFooter.m */; };
 		57ACB2E41E6E87E800D04A4D /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ACB2B31E6E87E800D04A4D /* MJRefreshBackFooter.m */; };
 		57ACB2E51E6E87E800D04A4D /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 57ACB2B51E6E87E800D04A4D /* MJRefreshComponent.m */; };
@@ -661,6 +665,14 @@
 		577A85EA1E5EAAC100834E61 /* CYNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYNavigationViewController.m; sourceTree = "<group>"; };
 		577A86061E5FCF1B00834E61 /* BaseNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNetworking.h; sourceTree = "<group>"; };
 		577A86071E5FCF1B00834E61 /* BaseNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNetworking.m; sourceTree = "<group>"; };
+		578F08A11E8225B800351FF1 /* CompanyinfoPipeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyinfoPipeline.h; sourceTree = "<group>"; };
+		578F08A21E8225B800351FF1 /* CompanyinfoPipeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyinfoPipeline.m; sourceTree = "<group>"; };
+		578F08A31E8225B800351FF1 /* CompanyinfoStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyinfoStore.h; sourceTree = "<group>"; };
+		578F08A41E8225B800351FF1 /* CompanyinfoStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyinfoStore.m; sourceTree = "<group>"; };
+		578F08A51E8225B800351FF1 /* CompanyinfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyinfoView.h; sourceTree = "<group>"; };
+		578F08A61E8225B800351FF1 /* CompanyinfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyinfoView.m; sourceTree = "<group>"; };
+		578F08A71E8225B800351FF1 /* CompanyinfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyinfoViewController.h; sourceTree = "<group>"; };
+		578F08A81E8225B800351FF1 /* CompanyinfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyinfoViewController.m; sourceTree = "<group>"; };
 		57ACB2B01E6E87E800D04A4D /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		57ACB2B11E6E87E800D04A4D /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		57ACB2B21E6E87E800D04A4D /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -1325,6 +1337,7 @@
 				577A85451E5EA3E900834E61 /* MessageShow */,
 				577A85441E5EA3D700834E61 /* ConselorJobShow */,
 				577A85431E5EA39900834E61 /* CompanyJobShow */,
+				578F08A01E8225B800351FF1 /* CompanyInfo */,
 				577A85421E5EA38700834E61 /* HomeShow */,
 				577A85241E5E96EC00834E61 /* Vender */,
 				577A85001E5E942300834E61 /* Handler */,
@@ -1897,6 +1910,53 @@
 				577A85D01E5EAA3300834E61 /* UIView+MIPipeline.m */,
 			);
 			path = MVCS;
+			sourceTree = "<group>";
+		};
+		578F08A01E8225B800351FF1 /* CompanyInfo */ = {
+			isa = PBXGroup;
+			children = (
+				578F08AD1E8225E700351FF1 /* Model */,
+				578F08AE1E8225F400351FF1 /* ViewModel */,
+				578F08AF1E8225FE00351FF1 /* View */,
+				578F08B01E82260500351FF1 /* ViewController */,
+			);
+			path = CompanyInfo;
+			sourceTree = "<group>";
+		};
+		578F08AD1E8225E700351FF1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				578F08A11E8225B800351FF1 /* CompanyinfoPipeline.h */,
+				578F08A21E8225B800351FF1 /* CompanyinfoPipeline.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		578F08AE1E8225F400351FF1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				578F08A31E8225B800351FF1 /* CompanyinfoStore.h */,
+				578F08A41E8225B800351FF1 /* CompanyinfoStore.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		578F08AF1E8225FE00351FF1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				578F08A51E8225B800351FF1 /* CompanyinfoView.h */,
+				578F08A61E8225B800351FF1 /* CompanyinfoView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		578F08B01E82260500351FF1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				578F08A71E8225B800351FF1 /* CompanyinfoViewController.h */,
+				578F08A81E8225B800351FF1 /* CompanyinfoViewController.m */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		57ACB2AE1E6E87E800D04A4D /* MJRefresh */ = {
@@ -2883,9 +2943,11 @@
 				5735F3A61E77E32D00504325 /* PYSearchViewController.m in Sources */,
 				5735F4371E7A80C700504325 /* UIImageView+WebCache.m in Sources */,
 				57FB9B991E7E13CC0086E9E7 /* EaseUsersListViewController.m in Sources */,
+				578F08AC1E8225B800351FF1 /* CompanyinfoViewController.m in Sources */,
 				57ACB2E31E6E87E800D04A4D /* MJRefreshAutoFooter.m in Sources */,
 				57FB9C1B1E7E14060086E9E7 /* EMSDWebImageCompat.m in Sources */,
 				5735F4021E7A7C3700504325 /* TADotView.m in Sources */,
+				578F08AB1E8225B800351FF1 /* CompanyinfoView.m in Sources */,
 				57FB9C351E7E14060086E9E7 /* PSTGridLayoutRow.m in Sources */,
 				5735F4301E7A80C700504325 /* SDWebImageManager.m in Sources */,
 				57FB9C1D1E7E14060086E9E7 /* EMSDWebImageDownloader.m in Sources */,
@@ -3044,6 +3106,7 @@
 				57FB9BA91E7E13CC0086E9E7 /* EaseChatToolbarItem.m in Sources */,
 				577A85DC1E5EAA3300834E61 /* NSInvocation+EXT.m in Sources */,
 				57ACB2ED1E6E87E800D04A4D /* MJRefreshBackStateFooter.m in Sources */,
+				578F08AA1E8225B800351FF1 /* CompanyinfoStore.m in Sources */,
 				57ACB2F01E6E87E800D04A4D /* MJRefreshStateHeader.m in Sources */,
 				57FB9C171E7E14050086E9E7 /* MWTapDetectingView.m in Sources */,
 				577A855A1E5EA85700834E61 /* ConselorshowPipeline.m in Sources */,
@@ -3056,6 +3119,7 @@
 				57FB9B7F1E7E13CC0086E9E7 /* amrFileCodec.mm in Sources */,
 				57FB9B7A1E7E13CC0086E9E7 /* EMCDDeviceManager+Media.m in Sources */,
 				57F926E61E80F17000C71DD9 /* ApplyFriendCell.m in Sources */,
+				578F08A91E8225B800351FF1 /* CompanyinfoPipeline.m in Sources */,
 				5735F49F1E7D1BDE00504325 /* NSData+NSNewBase64.m in Sources */,
 				5735F3D41E797B6600504325 /* LBXScanVideoZoomView.m in Sources */,
 				57FB9C1F1E7E14060086E9E7 /* EMSDWebImageManager.m in Sources */,

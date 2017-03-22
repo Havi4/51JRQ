@@ -10,4 +10,6 @@
 
 @interface CompanyHeaderView : UIView
 
+- (void)setCompanyInfo:(NSArray *)companyInfo;
+
 @end

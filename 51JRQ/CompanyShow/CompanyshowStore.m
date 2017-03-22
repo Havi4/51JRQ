@@ -68,6 +68,19 @@
 
     }];
 }
+//加载公司信息
+- (void)loadCompanyInfo
+{
+    NSDictionary *dataDic = @{
+                              @"p":@"1",
+                              };
+    [[BaseNetworking sharedAPIManager]searchCompanyInfoWith:dataDic success:^(id response) {
+        self.companyshowPipeline.companyInfoArr = [[(NSDictionary*)response objectForKey:@"data"] objectForKey:@"list"];
+        self.companyshowPipeline.isCompanyInfoDone = YES;
+    } fail:^(NSError *error) {
+
+    }];
+}
 
 - (__kindof MIPipeline *)pipeline {
     return self.companyshowPipeline;
@@ -78,6 +91,7 @@
     [MIObserve(self.companyshowPipeline,isRefresh) changed:^(id  _Nonnull newValue) {
         @strongify(self);
         [self loadRefresh];
+        [self loadCompanyInfo];
     }];
 
     [MIObserve(self.companyshowPipeline,isLoadingMore) changed:^(id  _Nonnull newValue) {

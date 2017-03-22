@@ -1,14 +1,13 @@
 //
-// CompanyshowView.h
+// CompanyinfoView.h
 // BaseAppStruct
 //
-// Created by Havi on 2017/02/23
+// Created by Havi on 2017/03/22
 // Copyright 2017 Havi. All right reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface CompanyshowView : UIView
-
+@interface CompanyinfoView : UIView
 
 @end

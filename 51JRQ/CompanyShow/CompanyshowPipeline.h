@@ -15,5 +15,8 @@
 @property (nonatomic, assign) BOOL isRefresh;
 @property (nonatomic, assign) BOOL isLoadingMore;
 @property (nonatomic, assign) NSInteger pageNum;
+//company
+@property (nonatomic, strong) NSArray *companyInfoArr;
+@property (nonatomic, assign) BOOL isCompanyInfoDone;
 
 @end
